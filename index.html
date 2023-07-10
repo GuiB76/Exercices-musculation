@@ -5,6 +5,63 @@
 
     <title> Entraînement en musculation </title>
 
+
+    <!-- STYLE MOBILE-->
+    <style>
+
+      @media only screen and (max-width: 768px)
+      {
+        /* Styles header menu */
+        .sticky-header 
+        {
+          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
+          display: flex; justify-content: space-between; align-items: center;
+          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 60px;
+        }
+
+        /*
+        .logo-header img { height: 40px; }
+        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
+        .menu-header li { margin-left: 15px; }
+        .menu-header a { text-decoration: none; color: #ffffff; }
+        .menu-header a:hover { color: #ff0000; }
+        */
+
+        /* Style pour la Page */
+        #h1-exercise { color:#ffffff }
+        #exercise-name { font-size: 45px; font-weight: bold; margin-bottom: 10px; }
+        #current-set { font-size: 25px; margin-bottom: 10px; }
+        #timer { font-size: 50px; margin-bottom: 20px; font-weight: bold; }
+        #exercise-image { max-width: 400px; max-height: 400px; }
+        .rounded-image { border-radius: 6%; }
+
+        .encadre 
+        { 
+          display: inline-block; border: 2px solid black; border-radius: 10px; 
+          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+          color: white;
+        }
+        .encadre:hover { background-color: #000000; }
+
+        .buttons-exercise { margin: 20px; }
+        .buttons-exercise button
+        { 
+          font-size: 20px; padding: 10px 20px; margin: 5px; 
+          background-color: #ffffff; border-radius: 5px;
+        }
+
+        .exercise-explanations 
+        { 
+          display: inline-block; border: 2px solid black; border-radius: 10px; 
+          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+          color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
+        }
+        .exercise-explainations:hover { background-color: #000000; }
+      }
+
+    </style>
+
+
     <!-- STYLE BUREAU et TABLETTE-->
     <style>
 
@@ -13,7 +70,7 @@
       /* Styles header menu */
       .sticky-header 
       {
-        position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ padding: 1px;
+        position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
         display: flex; justify-content: space-between; align-items: center;
         /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 60px;
       }
@@ -59,62 +116,63 @@
 
     </style>
 
-    <!-- STYLE MOBILE-->
+    <!-- MENU HAMBURGER -->
     <style>
 
-      @media only screen and (max-width: 768px) 
-      {
-        /* Styles header menu */
-        .sticky-header 
-        {
-          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ padding: 1px;
-          display: flex; justify-content: space-between; align-items: center;
-          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 60px;
-        }
-
-        /*
-        .logo-header img { height: 40px; }
-        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
-        .menu-header li { margin-left: 15px; }
-        .menu-header a { text-decoration: none; color: #ffffff; }
-        .menu-header a:hover { color: #ff0000; }
-        */
-
-        /* Style pour la Page */
-        #h1-exercise { color:#ffffff }
-        #exercise-name { font-size: 30px; font-weight: bold; margin-bottom: 10px; }
-        #current-set { font-size: 25px; margin-bottom: 10px; }
-        #timer { font-size: 50px; margin-bottom: 20px; font-weight: bold; }
-        #exercise-image { max-width: 400px; max-height: 400px; }
-        .rounded-image { border-radius: 6%; }
-
-        .encadre 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white;
-        }
-        .encadre:hover { background-color: #000000; }
-
-        .buttons-exercise { margin: 20px; }
-        .buttons-exercise button
-        { 
-          font-size: 20px; padding: 10px 20px; margin: 5px; 
-          background-color: #ffffff; border-radius: 5px;
-        }
-
-        .exercise-explanations 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
-        }
-        .exercise-explainations:hover { background-color: #000000; }
+      #menuToggleMobile
+      { 
+        display: block; position: relative; top: 50px; left: 50px; 
+        z-index: 1; -webkit-user-select: none; user-select: none;
       }
 
-      
+      #menuToggleMobile a { text-decoration: none; color: #515364; transition: color 0.3s ease; }
 
-    </style>
+      #menuToggleMobile a:hover { color: rgb(0, 0, 0); }
+      #menuToggleMobile input
+      {
+        display: block; width: 50px; height: 45px; position: absolute; top: -8px; left: -7px;
+        cursor: pointer; opacity: 0; /* hide this */ z-index: 2; /* place it over the hamburger */
+        -webkit-touch-callout: none;
+      }
+
+      /* The hamburger made of 3 span*/
+      #menuToggleMobile span
+      {
+        display: block; width: 45px; height: 8px; margin-bottom: 5px; position: relative;
+        background: #cdcdcd; border-radius: 3px; z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+      #menuToggleMobile span:first-child { transform-origin: 0% 0%; }
+      #menuToggleMobile span:nth-last-child(2){ transform-origin: 0% 100%; }
+      /* Transform all the slices of hamburger into a crossmark */
+      #menuToggleMobile input:checked ~ span
+      { opacity: 1; transform: rotate(45deg) translate(-2px, -1px); background: #232323; }
+      /* But let's hide the middle one */
+      #menuToggleMobile input:checked ~ span:nth-last-child(3)
+      { opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
+      /* Ohyeah and the last one should go the other direction */
+      #menuToggleMobile input:checked ~ span:nth-last-child(2)
+      { transform: rotate(-45deg) translate(0, -1px); }
+      /* Make this absolute positioned at the top left of the screen */
+      #menuMobile
+      { 
+        position: absolute; width: 300px; margin: -100px 0 0 -50px;
+        padding: 50px; padding-top: 125px; background: #ededed;
+        list-style-type: none; -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%; transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+      #menuMobile li { padding: 20px 0; font-size: 30px; }
+      /* Slide it in from the left */
+      #menuToggleMobile input:checked ~ ul { transform: none; }
+    
+  </style>
+
+
 
   </head>
 
@@ -149,71 +207,15 @@
           <span></span>
           <span></span>
           <ul id="menuMobile">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li>Contact</li></a>
+            <a href="#"> <strong> <li> Accueil </li> </strong> </a> 
+            <a href="#"> <strong> <li> Exercices </li> </strong> </a>
+            <a href="#"> <strong> <li> Nutritions </li> </strong> </a>
+            <a href="#"> <strong> <li> Informations </li> </strong> </a>
           </ul>
         </div>
       </nav>
 
     </header>
-
-    <!-- MENU HAMBURGER -->
-    <style>
-
-        #menuToggleMobile
-        { 
-          display: block; position: relative; top: 50px; left: 50px; 
-          z-index: 1; -webkit-user-select: none; user-select: none;
-        }
-
-        #menuToggleMobile a { text-decoration: none; color: #232323; transition: color 0.3s ease; }
-
-        #menuToggleMobile a:hover { color: rgb(255, 255, 255); }
-        #menuToggleMobile input
-        {
-          display: block; width: 45px; height: 32px; position: absolute; top: -8px; left: -7px;
-          cursor: pointer; opacity: 0; /* hide this */ z-index: 2; /* place it over the hamburger */
-          -webkit-touch-callout: none;
-        }
-
-        /* The hamburger made of 3 span*/
-        #menuToggleMobile span
-        {
-          display: block; width: 45px; height: 8px; margin-bottom: 5px; position: relative;
-          background: #cdcdcd; border-radius: 3px; z-index: 1;
-          transform-origin: 4px 0px;
-          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                      background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                      opacity 0.55s ease;
-        }
-        #menuToggleMobile span:first-child { transform-origin: 0% 0%; }
-        #menuToggleMobile span:nth-last-child(2){ transform-origin: 0% 100%; }
-        /* Transform all the slices of hamburger into a crossmark */
-        #menuToggleMobile input:checked ~ span
-        { opacity: 1; transform: rotate(45deg) translate(-2px, -1px); background: #232323; }
-        /* But let's hide the middle one */
-        #menuToggleMobile input:checked ~ span:nth-last-child(3)
-        { opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
-        /* Ohyeah and the last one should go the other direction */
-        #menuToggleMobile input:checked ~ span:nth-last-child(2)
-        { transform: rotate(-45deg) translate(0, -1px); }
-        /* Make this absolute positioned at the top left of the screen */
-        #menuMobile
-        { 
-          position: absolute; width: 300px; margin: -100px 0 0 -50px;
-          padding: 50px; padding-top: 125px; background: #ededed;
-          list-style-type: none; -webkit-font-smoothing: antialiased;
-          /* to stop flickering of text in safari */
-          transform-origin: 0% 0%; transform: translate(-100%, 0);
-          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-        }
-        #menuMobile li { padding: 20px 0; font-size: 30px; }
-        /* Slide it in from the left */
-        #menuToggleMobile input:checked ~ ul { transform: none; }
-      
-    </style>
 
     
     <main>  
@@ -221,36 +223,40 @@
       <h1 id="h1-exercise"> Entraînement bras et pectoraux </h1>
       <br>
 
-      <div class="encadre">
-        <br>
-        <div id="exercise-name"></div>
-        <div id="current-set"> </div>
-        <br><br>
-        <div id="timer">00:00</div>
+      <div>
 
-        <!-- Boutons -->
-        <div class="buttons-exercise">
-          <button id="start">Démarrer</button>
-          <button id="pause" disabled>Pause</button>
-          <button id="reset">Réinitialiser</button>
+        <div class="encadre">
+          <br>
+          <div id="exercise-name"></div>
+          <div id="current-set"> </div>
+          <br><br>
+          <div id="timer">00:00</div>
+  
+          <!-- Boutons -->
+          <div class="buttons-exercise">
+            <button id="start">Démarrer</button>
+            <button id="pause" disabled>Pause</button>
+            <button id="reset">Réinitialiser</button>
+          </div>
+  
+        </div>
+  
+        <br><br><br>
+  
+        <div class="encadre">
+  
+          <img id="exercise-image" class="rounded-image" src="" alt="Illustration de l'exercice">
+  
         </div>
 
-      </div>
+        <br><br><br>
 
-      <br><br><br>
-
-      <div class="encadre">
-
-        <img id="exercise-image" class="rounded-image" src="" alt="Illustration de l'exercice">
-
-      </div>
-
-      <br><br><br>
-
-      <div class="encadre">
-        <div class="buttons-exercise">
-          <button id="change-exercise" onclick="changeExplanationDiv()">Changer d'exercice</button>
+        <div class="encadre">
+          <div class="buttons-exercise">
+            <button id="change-exercise" onclick="changeExplanationDiv()">Changer d'exercice</button>
+          </div>
         </div>
+
       </div>
 
       <br><br><br>
