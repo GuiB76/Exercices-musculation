@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title> Tous les entrainements </title>
+
+    <style>
+
+        body { background-color:#343541; font-family: Arial, sans-serif; text-align: center; margin: 0px; }
+
+        /* Styles header menu */
+        .sticky-header 
+        {
+          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
+          display: flex; justify-content: space-between; align-items: center;
+          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 20px;
+        }
+
+        /*
+        .logo-header img { height: 40px; }
+        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
+        .menu-header li { margin-left: 15px; }
+        .menu-header a { text-decoration: none; color: #ffffff; }
+        .menu-header a:hover { color: #ff0000; }
+        */
+
+        /* Style pour la Page */
+        #h1-title { color:#ffffff; font-size: 2.5rem; }
+        .encadre 
+        { 
+          display: inline-block; border: 2px solid black; border-radius: 10px; 
+          background-color: #2b2c35; padding: 25px; transition: background-color 0.3s;
+          color: white; 
+        }
+        .encadre:hover { background-color: #000000; }
+        .encadre h2 { font-size: 2rem;}
+        .encadre p { font-size: 1.5rem;}
+        .imgEntrainements { width: 200px; border-radius: 6%; }
+
+      /*===========================================================================*/
+      /* MENU HAMBURGER */
+      #nav-encadre 
+      { 
+        border: 2px solid black; border-radius: 10px; top: 29px; left: 44px;
+        background-color: #2b2c35; transition: background-color 0.3s;
+        width: 55px; height: 55px; position:absolute;
+      }
+      #nav-encadre:hover { background-color: #000000; }
+
+      #menuToggleMobile
+      { 
+        display: block; position: relative; top: 50px; left: 50px; 
+        z-index: 1; -webkit-user-select: none; user-select: none;
+      }
+
+      #menuToggleMobile a { text-decoration: none; color: #515364; transition: color 0.3s ease; }
+
+      #menuToggleMobile a:hover { color: rgb(0, 0, 0); }
+      #menuToggleMobile input
+      {
+        display: block; width: 50px; height: 45px; position: absolute; top: -8px; left: -7px;
+        cursor: pointer; opacity: 0; /* hide this */ z-index: 2; /* place it over the hamburger */
+        -webkit-touch-callout: none;
+      }
+
+      /* The hamburger made of 3 span*/
+      #menuToggleMobile span
+      {
+        display: block; width: 45px; height: 8px; margin-bottom: 5px; position: relative;
+        background: #cdcdcd; border-radius: 3px; z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+      #menuToggleMobile span:first-child { transform-origin: 0% 0%; }
+      #menuToggleMobile span:nth-last-child(2){ transform-origin: 0% 100%; }
+      /* Transform all the slices of hamburger into a crossmark */
+      #menuToggleMobile input:checked ~ span
+      { opacity: 1; transform: rotate(45deg) translate(-2px, -1px); background: #232323; }
+      /* But let's hide the middle one */
+      #menuToggleMobile input:checked ~ span:nth-last-child(3)
+      { opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
+      /* Ohyeah and the last one should go the other direction */
+      #menuToggleMobile input:checked ~ span:nth-last-child(2)
+      { transform: rotate(-45deg) translate(0, -1px); }
+      /* Make this absolute positioned at the top left of the screen */
+      #menuMobile
+      { 
+        position: absolute; width: 300px; margin: -100px 0 0 -50px;
+        padding: 50px; padding-top: 125px; background: #ededed;
+        list-style-type: none; -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%; transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+      #menuMobile li { padding: 20px 0; font-size: 30px; }
+      /* Slide it in from the left */
+      #menuToggleMobile input:checked ~ ul { transform: none; }
+
+
+      /*===========================================================================*/
+      /* MOBILE */
+      @media screen and (max-width: 768px)
+      {
+        .sticky-header { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+      }
+    
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <header class="sticky-header">
+      <!-- MENU HAMBURGER -->
+      <nav role="navigation">
+        <div id="menuToggleMobile">
+          <!-- A fake / hidden checkbox is used as click reciever, can use the :checked selector on it. -->
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menuMobile">
+            <a href="index.html"> <strong> <li> Accueil </li> </strong> </a> 
+            <a href="entrainements.html"> <strong> <li> Entrainements </li> </strong> </a>
+            <a href="exercices.html"> <strong> <li> Exercices </li> </strong> </a>
+            <a href="informations.html"> <strong> <li> Informations </li> </strong> </a>
+          </ul>
+        </div>
+      </nav>
+      <div id="nav-encadre"></div>
+    </header>
+
+    
+    <main>  
+
+      <h1 id="h1-title"> Tous les entrainements </h1>
+      <br>
+        <div class="encadre">
+          <h2> Entrainement Bras et Pectoraux </h2>
+          <p> 
+            42 minutes d'entrainement avec 5 exercices 
+            <br> ciblant les bras et les pectoraux. 
+          </p>
+          <p> 
+            4 séries de 8 à 14 répétitions par exercice. 
+          </p>
+          <br>
+          <img class="imgEntrainements" class="rounded-image" src="curl-biceps-avec-halteres-alterne.gif" alt="Illustration de l'exercice">
+        </div>
+        <br> <br> <br>
+        <div class="encadre">
+          <h2> Jambes et Abdos </h2>
+          <p> 
+            35 minutes d'entrainement avec 5 exercices 
+            <br> ciblant les jambes et les abdominaux . 
+          </p>
+          <p> 
+            4 séries de 8 à 14 répétitions par exercice 
+            <br> ou de maintien pendant 30 secondes. 
+          </p>
+          <br>
+          <img class="imgEntrainements" class="rounded-image" src="souleve-de-terre-sumo-kettlebell.gif" alt="Illustration de l'exercice">
+        </div>
+  
+
+
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+
+  </body>
+
+</html>
