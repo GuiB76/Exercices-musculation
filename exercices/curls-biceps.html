@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title> Les Curls Biceps </title>
+
+    <style>
+
+        body { background-color:#343541; font-family: Arial, sans-serif; text-align: center; margin: 0px; }
+
+        /* Styles header menu */
+        .sticky-header 
+        {
+          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
+          display: flex; justify-content: space-between; align-items: center;
+          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 20px;
+        }
+
+        /*
+        .logo-header img { height: 40px; }
+        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
+        .menu-header li { margin-left: 15px; }
+        .menu-header a { text-decoration: none; color: #ffffff; }
+        .menu-header a:hover { color: #ff0000; }
+        */
+
+        /* Style pour la Page */
+        #h1-exercise { color:#ffffff; font-size: 2.5rem;}
+        #exercise-name { font-size: 3rem; font-weight: bold; margin-bottom: 10px; }
+        #current-set { font-size: 2.5rem; margin-bottom: 10px; }
+        #timer { font-size: 3.5rem; margin-bottom: 20px; font-weight: bold; }
+        #exercise-image { max-width: 400px; max-height: 400px; }
+        .rounded-image { border-radius: 6%; }
+    
+        .encadre 
+        { 
+          display: inline-block; border: 2px solid black; border-radius: 10px; 
+          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+          color: white;
+        }
+        .encadre:hover { background-color: #000000; }
+
+        .buttons-exercise { margin: 20px; }
+        .buttons-exercise button
+        { 
+          font-size: 2rem; padding: 10px 20px; margin: 5px; 
+          background-color: #ffffff; border-radius: 5px;
+          font-weight: bold; color: #000000;
+        }
+
+        .exercise-explanations 
+        { 
+          display: inline-block; border: 2px solid black; border-radius: 10px; 
+          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+          color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
+        }
+        .exercise-explainations:hover { background-color: #000000; }
+
+
+      /*===========================================================================*/
+      /* MENU HAMBURGER */
+      #nav-encadre 
+      { 
+        border: 2px solid black; border-radius: 10px; top: 29px; left: 44px;
+        background-color: #2b2c35; transition: background-color 0.3s;
+        width: 55px; height: 55px; position:absolute;
+      }
+      #nav-encadre:hover { background-color: #000000; }
+
+      #menuToggleMobile
+      { 
+        display: block; position: relative; top: 50px; left: 50px; 
+        z-index: 1; -webkit-user-select: none; user-select: none;
+      }
+
+      #menuToggleMobile a { text-decoration: none; color: #515364; transition: color 0.3s ease; }
+
+      #menuToggleMobile a:hover { color: rgb(0, 0, 0); }
+      #menuToggleMobile input
+      {
+        display: block; width: 50px; height: 45px; position: absolute; top: -8px; left: -7px;
+        cursor: pointer; opacity: 0; /* hide this */ z-index: 2; /* place it over the hamburger */
+        -webkit-touch-callout: none;
+      }
+
+      /* The hamburger made of 3 span*/
+      #menuToggleMobile span
+      {
+        display: block; width: 45px; height: 8px; margin-bottom: 5px; position: relative;
+        background: #cdcdcd; border-radius: 3px; z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+      #menuToggleMobile span:first-child { transform-origin: 0% 0%; }
+      #menuToggleMobile span:nth-last-child(2){ transform-origin: 0% 100%; }
+      /* Transform all the slices of hamburger into a crossmark */
+      #menuToggleMobile input:checked ~ span
+      { opacity: 1; transform: rotate(45deg) translate(-2px, -1px); background: #232323; }
+      /* But let's hide the middle one */
+      #menuToggleMobile input:checked ~ span:nth-last-child(3)
+      { opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
+      /* Ohyeah and the last one should go the other direction */
+      #menuToggleMobile input:checked ~ span:nth-last-child(2)
+      { transform: rotate(-45deg) translate(0, -1px); }
+      /* Make this absolute positioned at the top left of the screen */
+      #menuMobile
+      { 
+        position: absolute; width: 300px; margin: -100px 0 0 -50px;
+        padding: 50px; padding-top: 125px; background: #ededed;
+        list-style-type: none; -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%; transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+      #menuMobile li { padding: 20px 0; font-size: 30px; }
+      /* Slide it in from the left */
+      #menuToggleMobile input:checked ~ ul { transform: none; }
+
+
+      /*===========================================================================*/
+      /* MOBILE */
+      @media screen and (max-width: 768px)
+      {
+        .sticky-header { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+        #nav-encadre { top: 49px; left: 44px; width: 55px; height: 55px; position:absolute; }
+        #h1-exercise { color:#ffffff; font-size: 4vw;}
+        #exercise-name { font-size: 5vw; font-weight: bold; margin-bottom: 10px; }
+        #current-set { font-size: 3vw; margin-bottom: 10px; }
+        #timer { font-size: 8vw; margin-bottom: 20px; font-weight: bold; }
+      }
+    
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <header class="sticky-header">
+
+      <!-- MENU HAMBURGER -->
+      <nav role="navigation">
+        <div id="menuToggleMobile">
+          <!-- A fake / hidden checkbox is used as click reciever, can use the :checked selector on it. -->
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menuMobile">
+            <a href="index.html"> <strong> <li> Accueil </li> </strong> </a> 
+            <a href="entrainements.html"> <strong> <li> Entrainements </li> </strong> </a>
+            <a href="exercices.html"> <strong> <li> Exercices </li> </strong> </a>
+            <a href="#"> <strong> <li> Informations </li> </strong> </a>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="nav-encadre"></div>
+
+    </header>
+
+    
+    <main>  
+
+      <h1 id="h1-exercise"> Curls Biceps </h1>
+      <br>
+
+      <div>
+
+        <div class="encadre">
+          <br>
+          <div id="exercise-name"></div>
+          <div id="current-set"> </div>
+          <br>
+          <div id="timer">00:00</div>
+          <!-- Boutons -->
+          <div class="buttons-exercise">
+            <button id="start">Démarrer</button>
+            <button id="pause" disabled>Pause</button>
+            <button id="reset">Réinitialiser</button>
+          </div>
+        </div>
+  
+        <br><br><br>
+  
+        <div class="encadre">
+  
+          <img id="exercise-image" class="rounded-image" src="/img/des-exercices-detirement.png" alt="Illustration de l'exercice">
+  
+        </div>
+
+        <br><br><br>
+
+      </div>
+
+      <br><br><br>
+
+      <div id="curls-biceps-explanation" class="exercise-explanations">
+        <h2>
+          Les Curls Biceps
+        </h2>
+        <p>
+          Les curls biceps sont un exercice populaire qui cible spécifiquement les muscles des biceps, situés à l'avant des bras. 
+          <br> Voici comment effectuer les curls biceps avec des haltères :
+          <br><br>
+          <strong> 1. Position de départ : </strong> 
+          <br> Tenez un haltère dans chaque main, bras le long du corps, paumes tournées vers l'avant ou vers vos cuisses.
+          <br><br>
+          <strong> 2. Stabilisation : </strong> 
+          <br> Tenez-vous debout, le dos droit, les épaules légèrement rétractées et les abdominaux contractés pour maintenir une bonne posture.
+          <br><br>
+          <strong> 3. Mouvement : </strong>
+          <br> Fléchissez lentement les coudes tout en gardant les bras le long du corps. 
+          <br> Le mouvement doit se faire uniquement au niveau des coudes. 
+          <br> Contractez les muscles des biceps pour soulever les haltères.
+          <br><br>
+          <strong> 4. Amplitude du mouvement :  </strong>
+          <br> Montez les haltères jusqu'à ce que vos avant-bras soient presque verticaux et que vos biceps soient complètement contractés. 
+          <br> À ce stade, les haltères doivent être proches de vos épaules.
+          <br><br>
+          <strong> 5. Contrôle du mouvement :  </strong> 
+          <br> Faites une pause d'une seconde en haut de la contraction, 
+          <br> puis abaissez lentement les haltères en contrôlant le mouvement jusqu'à revenir à la position de départ.
+          <br><br>
+          <strong> 6. Respiration :  </strong>
+          <br> Inspirez pendant la descente et expirez pendant la montée.
+          <br><br>
+          <strong> 7. Répétitions :  </strong>
+          <br> Effectuez le nombre de répétitions souhaité, en visant généralement de 8 à 14 répétitions par série et 3 à 4 séries.
+          <br><br><br>
+          <strong> Recommandations :  </strong>
+          <br> Il est important de maintenir une bonne technique d'exécution pendant les curls biceps. 
+          <br> Évitez de balancer le corps pour vous aider à soulever les haltères et concentrez-vous sur la contraction musculaire des biceps. 
+          <br> Assurez-vous également de choisir un poids d'haltères approprié en fonction de votre niveau de force et de progression.
+          <br> Les curls biceps peuvent être intégrés dans votre routine d'entraînement pour renforcer et développer les muscles des bras.
+        </p>
+      </div>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script>
+
+      //---------------------------------------------------------------------------\\
+      // Le Tableau des Séries
+
+      var exerciseTime1 = 
+      [
+        { name: "Curl Biceps - Préparation",      duration: 5,        image: "/img/des-exercices-detirement.png" },
+        { name: "Série 1",                        duration: 6,        image: "/img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Repos 1",                        duration: 6,        image: "/img/drink-water.png" },
+        { name: "Série 2",                        duration: 6,        image: "/img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Repos 2",                        duration: 6,        image: "/img/drink-water.png" },
+        { name: "Série 3",                        duration: 6,        image: "/img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Repos 3",                        duration: 6,        image: "/img/drink-water.png" },
+        { name: "Série 4",                        duration: 6,        image: "/img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Récupération",                   duration: 15,       image: "/img/drink-water.png" }
+      ];
+
+      //---------------------------------------------------------------------------\\
+      // Les Variables
+
+      var exerciseIndex = 0;
+      var exerciseTime = exerciseTime1;
+      var secondsRemaining = exerciseTime[exerciseIndex].duration;
+      var intervalId;
+
+      var timerElement = document.getElementById("timer");
+      var startButton = document.getElementById("start");
+      var pauseButton = document.getElementById("pause");
+      var resetButton = document.getElementById("reset");
+      var exerciseNameElement = document.getElementById("exercise-name");
+      var currentSetElement = document.getElementById("current-set");
+      var exerciseImageElement = document.getElementById("exercise-image");
+
+
+      //---------------------------------------------------------------------------\\
+      // LES FONCTIONS
+      
+      function updateTimer() 
+      {
+        var minutes = Math.floor(secondsRemaining / 60);
+        var seconds = secondsRemaining % 60;
+
+        timerElement.textContent = ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
+
+        secondsRemaining--;
+
+        if (secondsRemaining < 0) 
+        {
+          clearInterval(intervalId);
+          exerciseIndex++;
+          if (exerciseIndex < exerciseTime.length) 
+          {
+            secondsRemaining = exerciseTime[exerciseIndex].duration;
+            currentSetElement.textContent = exerciseTime[exerciseIndex].name;
+            startTimer();
+            updateExerciseImage();
+          } 
+          else 
+          {
+            timerElement.textContent = "Terminé !";
+            startButton.disabled = true;
+            pauseButton.disabled = true;
+          }
+        }
+
+        if (seconds <= 5) 
+        {
+          timerElement.style.color = "green";
+        } 
+        else 
+        {
+          timerElement.style.color = "white";
+        }
+      }
+
+
+      function startTimer() 
+      {
+        intervalId = setInterval(updateTimer, 1000);
+        startButton.disabled = true;
+        pauseButton.disabled = false;
+      }
+
+
+      function pauseTimer() 
+      {
+        clearInterval(intervalId);
+        startButton.disabled = false;
+        pauseButton.disabled = true;
+      }
+
+
+      function resetTimer() 
+      {
+        clearInterval(intervalId);
+        exerciseIndex = 0;
+        secondsRemaining = exerciseTime[exerciseIndex].duration;
+        exerciseNameElement.textContent = exerciseTime[exerciseIndex].name.split(" - ")[0];
+        currentSetElement.textContent = "Préparation";
+        timerElement.textContent = "00:00";
+        startButton.disabled = false;
+        pauseButton.disabled = true;
+        updateExerciseImage();
+      }
+
+      function updateExerciseImage() 
+      {
+        var imagePath = exerciseTime[exerciseIndex].image;
+        exerciseImageElement.src = imagePath;
+      }
+
+      startButton.addEventListener("click", startTimer);
+      pauseButton.addEventListener("click", pauseTimer);
+      resetButton.addEventListener("click", resetTimer);
+
+      //---------------------------------------------------------------------------\\
+      // L'Appel des fonctions
+
+      resetTimer();
+      updateExerciseImage();
+
+    </script>
+
+
+  </body>
+
+</html>

@@ -141,23 +141,6 @@
 
     <header class="sticky-header">
 
-      <!-- Ancien header -->
-      <!-- 
-      <div>
-        <div class="logo-header">
-          <img src="chemin/vers/votre-logo.png" alt="Logo">
-        </div>
-        <nav class="menu-header">
-          <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      -->
-
       <!-- MENU HAMBURGER -->
       <nav role="navigation">
         <div id="menuToggleMobile">
@@ -167,9 +150,9 @@
           <span></span>
           <span></span>
           <ul id="menuMobile">
-            <a href="#"> <strong> <li> Accueil </li> </strong> </a> 
+            <a href="index.html"> <strong> <li> Accueil </li> </strong> </a> 
             <a href="entrainements.html"> <strong> <li> Entrainements </li> </strong> </a>
-            <a href="#"> <strong> <li> Exercices </li> </strong> </a>
+            <a href="exercices.html"> <strong> <li> Exercices </li> </strong> </a>
             <a href="#"> <strong> <li> Informations </li> </strong> </a>
           </ul>
         </div>
@@ -509,6 +492,7 @@
         { name: "Récupération",                       duration: 15,   image: "drink-water.png" }
       ];
 
+
       //---------------------------------------------------------------------------\\
       // Les Variables
 
@@ -525,6 +509,7 @@
       var currentSetElement = document.getElementById("current-set");
       var exerciseImageElement = document.getElementById("exercise-image");
       var changeExerciseButton = document.getElementById("change-exercise");
+
 
       //---------------------------------------------------------------------------\\
       // LES FONCTIONS
@@ -552,6 +537,7 @@
         nextExplanationDiv.style.display = "inline-block";
       }
 
+      
       function updateTimer() 
       {
         var minutes = Math.floor(secondsRemaining / 60);

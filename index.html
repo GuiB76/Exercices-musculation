@@ -121,16 +121,22 @@
       #menuToggleMobile input:checked ~ ul { transform: none; }
 
 
+      /* Illustrations TOP Page */
+      .container  {display: flex; }
+      .left-column { flex: 1; }
+      .right-column { flex: 2; display: flex; flex-wrap: wrap; }
+      .imageCol1 { width: 100%; height: auto; margin-bottom: 10px; }
+      .imageCol2 { width: 50%; height: auto; margin-bottom: 10px; }
+
+
       /*===========================================================================*/
       /* MOBILE */
       @media screen and (max-width: 768px)
       {
         .sticky-header { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-        #nav-encadre { top: 49px; left: 44px; width: 55px; height: 55px; position:absolute; }
-        #h1-exercise { color:#ffffff; font-size: 4vw;}
-        #exercise-name { font-size: 5vw; font-weight: bold; margin-bottom: 10px; }
-        #current-set { font-size: 3vw; margin-bottom: 10px; }
-        #timer { font-size: 8vw; margin-bottom: 20px; font-weight: bold; }
+
+        .container { flex-direction: column; }
+        .right-column { flex: 1; }
       }
     
     </style>
@@ -141,23 +147,6 @@
   <body>
 
     <header class="sticky-header">
-
-      <!-- Ancien header -->
-      <!-- 
-      <div>
-        <div class="logo-header">
-          <img src="chemin/vers/votre-logo.png" alt="Logo">
-        </div>
-        <nav class="menu-header">
-          <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      -->
 
       <!-- MENU HAMBURGER -->
       <nav role="navigation">
@@ -182,6 +171,20 @@
 
     
     <main>  
+
+      <div class="encadre">
+        <div class="container">
+          <div class="left-column">
+            <img class="imageCol1" src="img\des-exercices-detirement.png" alt="Image 1">
+          </div>
+          <div class="right-column">
+            <img class="imageCol2" src="img\drink-water.png" alt="Image 2">
+            <img class="imageCol2" src="img\drink-water.png" alt="Image 3">
+          </div>
+        </div>
+      </div>
+      
+
 
       <h1 id="h1-exercise"> Entraînement bras et pectoraux </h1>
       <br>

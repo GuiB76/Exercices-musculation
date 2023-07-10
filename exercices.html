@@ -18,6 +18,24 @@
           /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 20px;
         }
 
+        /* Lien non visité */
+        a:link {
+          color: #ffffff;
+          text-decoration: none;
+        }
+
+        /* Lien visité */
+        a:visited {
+          color: #ffffff;
+          text-decoration: none;
+        }
+
+        /* Lien survolé */
+        a:hover {
+          color: #ffffff;
+          text-decoration: underline;
+        }
+
         /*
         .logo-header img { height: 40px; }
         .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
@@ -138,19 +156,18 @@
     
     <main>  
 
-      <h1 id="h1-title"> Tous les entrainements </h1>
+      <h1 id="h1-title"> Tous les exercices </h1>
       <br>
         <div class="encadre">
-          <h2> Entrainement Bras et Pectoraux </h2>
-          <p> 
-            42 minutes d'entrainement avec 5 exercices 
-            <br> ciblant les bras et les pectoraux. 
-          </p>
-          <p> 
-            4 séries de 8 à 14 répétitions par exercice. 
-          </p>
-          <br>
-          <img class="imgEntrainements" class="rounded-image" src="curl-biceps-avec-halteres-alterne.gif" alt="Illustration de l'exercice">
+          <a href="exercices\curls-biceps.html">
+            <h2> Curls Biceps </h2>
+            <p> 
+              4 séries de 1 minute chacune
+              <br> 4 repos de 1 minute chacun 
+            </p>
+            <br>
+            <img class="imgEntrainements" class="rounded-image" src="img\curl-biceps-avec-halteres-alterne.gif" alt="Illustration de l'exercice">
+          </a>
         </div>
         <br> <br> <br>
         <div class="encadre">
@@ -164,10 +181,8 @@
             <br> ou de maintien pendant 30 secondes. 
           </p>
           <br>
-          <img class="imgEntrainements" class="rounded-image" src="souleve-de-terre-sumo-kettlebell.gif" alt="Illustration de l'exercice">
+          <img class="imgEntrainements" class="rounded-image" src="img\souleve-de-terre-sumo-kettlebell.gif" alt="Illustration de l'exercice">
         </div>
-  
-
 
 
 
