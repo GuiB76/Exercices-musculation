@@ -1,4 +1,26 @@
-@media only screen and (max-width: 768px)
-{
+@media (max-width: 790px) 
+  {
+
+    .encadre { width: 490px; font-size: 1.5rem;}
+
+    /* Page d'Entrainement Spécifique */
+    .EncadresEntrainements { display: inline-block; justify-content: center;}
+    .exercise-explanations { border-radius: 5px; padding: 0rem; width: 480px; padding: 10px; }
+    section.wrap-exercise-explanation { display: flex; justify-content: center;}
+
+    /* Page Exercices */
+    .ExercicesPresentationSection { display: inline-block; justify-content: center;}
+    .ExercicePresentation { margin-left: 0px; margin-right: 0px;}
+    .imgExercices { width: 200px; border-radius: 6%;}
   
-}
+
+  }
+
+  @media (max-width: 500px)
+  {
+    .encadre { width: 300px;}
+    #exercise-image { width: 250px; }
+
+    /* Page d'Entrainement Spécifique */
+    .exercise-explanations { width: 300px; }
+  }
