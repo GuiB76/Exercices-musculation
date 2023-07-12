@@ -6,3 +6,12 @@ window.addEventListener('DOMContentLoaded', function()
     document.getElementById('cgu-link').href = "/cgu.html";
     document.getElementById('rgpd-link').href = "/rgpd.html";
 });
+
+function reloadPageOnLoad() 
+{
+    window.addEventListener("load", function() 
+    {
+        location.reload();
+    });
+}
+  
