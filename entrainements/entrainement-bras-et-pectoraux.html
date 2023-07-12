@@ -2,138 +2,15 @@
 <html>
 
   <head>
-
-    <title> Entraînement en musculation </title>
-
-    <style>
-
-        body { background-color:#343541; font-family: Arial, sans-serif; text-align: center; margin: 0px; }
-
-        /* Styles header menu */
-        .sticky-header 
-        {
-          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
-          display: flex; justify-content: space-between; align-items: center;
-          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 20px;
-        }
-
-        /*
-        .logo-header img { height: 40px; }
-        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
-        .menu-header li { margin-left: 15px; }
-        .menu-header a { text-decoration: none; color: #ffffff; }
-        .menu-header a:hover { color: #ff0000; }
-        */
-
-        /* Style pour la Page */
-        #h1-exercise { color:#ffffff; font-size: 2.5rem;}
-        #exercise-name { font-size: 3rem; font-weight: bold; margin-bottom: 10px; }
-        #current-set { font-size: 2.5rem; margin-bottom: 10px; }
-        #timer { font-size: 3.5rem; margin-bottom: 20px; font-weight: bold; }
-        #exercise-image { max-width: 400px; max-height: 400px; }
-        .rounded-image { border-radius: 6%; }
-    
-        .encadre 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white;
-        }
-        .encadre:hover { background-color: #000000; }
-
-        .buttons-exercise { margin: 20px; }
-        .buttons-exercise button
-        { 
-          font-size: 2rem; padding: 10px 20px; margin: 5px; 
-          background-color: #ffffff; border-radius: 5px;
-          font-weight: bold; color: #000000;
-        }
-
-        .exercise-explanations 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
-        }
-        .exercise-explainations:hover { background-color: #000000; }
-
-
-      /*===========================================================================*/
-      /* MENU HAMBURGER */
-      #nav-encadre 
-      { 
-        border: 2px solid black; border-radius: 10px; top: 29px; left: 44px;
-        background-color: #2b2c35; transition: background-color 0.3s;
-        width: 55px; height: 55px; position:absolute;
-      }
-      #nav-encadre:hover { background-color: #000000; }
-
-      #menuToggleMobile
-      { 
-        display: block; position: relative; top: 50px; left: 50px; 
-        z-index: 1; -webkit-user-select: none; user-select: none;
-      }
-
-      #menuToggleMobile a { text-decoration: none; color: #515364; transition: color 0.3s ease; }
-
-      #menuToggleMobile a:hover { color: rgb(0, 0, 0); }
-      #menuToggleMobile input
-      {
-        display: block; width: 50px; height: 45px; position: absolute; top: -8px; left: -7px;
-        cursor: pointer; opacity: 0; /* hide this */ z-index: 2; /* place it over the hamburger */
-        -webkit-touch-callout: none;
-      }
-
-      /* The hamburger made of 3 span*/
-      #menuToggleMobile span
-      {
-        display: block; width: 45px; height: 8px; margin-bottom: 5px; position: relative;
-        background: #cdcdcd; border-radius: 3px; z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    opacity 0.55s ease;
-      }
-      #menuToggleMobile span:first-child { transform-origin: 0% 0%; }
-      #menuToggleMobile span:nth-last-child(2){ transform-origin: 0% 100%; }
-      /* Transform all the slices of hamburger into a crossmark */
-      #menuToggleMobile input:checked ~ span
-      { opacity: 1; transform: rotate(45deg) translate(-2px, -1px); background: #232323; }
-      /* But let's hide the middle one */
-      #menuToggleMobile input:checked ~ span:nth-last-child(3)
-      { opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
-      /* Ohyeah and the last one should go the other direction */
-      #menuToggleMobile input:checked ~ span:nth-last-child(2)
-      { transform: rotate(-45deg) translate(0, -1px); }
-      /* Make this absolute positioned at the top left of the screen */
-      #menuMobile
-      { 
-        position: absolute; width: 300px; margin: -100px 0 0 -50px;
-        padding: 50px; padding-top: 125px; background: #ededed;
-        list-style-type: none; -webkit-font-smoothing: antialiased;
-        /* to stop flickering of text in safari */
-        transform-origin: 0% 0%; transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-      }
-      #menuMobile li { padding: 20px 0; font-size: 30px; }
-      /* Slide it in from the left */
-      #menuToggleMobile input:checked ~ ul { transform: none; }
-
-
-      /*===========================================================================*/
-      /* MOBILE */
-      @media screen and (max-width: 768px)
-      {
-        .sticky-header { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-        #nav-encadre { top: 49px; left: 44px; width: 55px; height: 55px; position:absolute; }
-        #h1-exercise { color:#ffffff; font-size: 4vw;}
-        #exercise-name { font-size: 5vw; font-weight: bold; margin-bottom: 10px; }
-        #current-set { font-size: 3vw; margin-bottom: 10px; }
-        #timer { font-size: 8vw; margin-bottom: 20px; font-weight: bold; }
-      }
-    
-    </style>
-
+    <!-- META DATA -->
+    <title> FaisDuSportBatard </title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style/header.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/footer.css">
+    <!-- JS -->
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/EntrainementBrasPectoraux.js" ></script>
   </head>
 
 
@@ -409,30 +286,30 @@
         </p>
       </div>
 
-      
-
-
     </main>
 
-    <footer>
+    <br><br><br>
 
+    <footer>
+      <div class="borderFooter">
+        <div class="footer-left">
+          <span id="site-name"></span> &copy; <span id="copyright"></span>
+        </div>
+        <div class="footer-center">
+          <a href="/cgu.html" id="cgu-link"> Conditions Générales d'Utilisation </a>
+        </div>
+        <div class="footer-right">
+          <a href="/rgpd.html" id="rgpd-link"> Politique de Confidentialité (RGPD)</a>
+        </div>
+      </div>
     </footer>
 
-
     <script>
-
-      //---------------------------------------------------------------------------\\
-      // Changement tailles polices pour mobile
-      var browserWidth = window.innerWidth;
-      var exerciseNameSize = document.getElementById("exercise-name");
-      if (window.innerWidth <= 768) 
-      { exerciseNameSize.style.fontSize = '55px'; }
-
-
       //---------------------------------------------------------------------------\\
       // Les Tableaux d'Exercices
 
-      var exerciseTime1 = [
+      var exerciseTime1 = 
+      [
         { name: "Curl Biceps - Préparation",      duration: 5,        image: "/img/des-exercices-detirement.png" },
         { name: "Série 1",                        duration: 6,        image: "/img/curl-biceps-avec-halteres-alterne.gif" },
         { name: "Repos 1",                        duration: 6,        image: "/img/drink-water.png" },
@@ -444,7 +321,8 @@
         { name: "Récupération",                   duration: 15,       image: "/img/drink-water.png" }
       ];
 
-      var exerciseTime2 = [
+      var exerciseTime2 = 
+      [
         { name: "Développé Couché - Préparation",     duration: 5,    image: "/img/des-exercices-detirement.png" },
         { name: "Série 1",                            duration: 6,    image: "/img/developpe-couche-halteres-exercice-musculation.gif" },
         { name: "Repos 1",                            duration: 6,    image: "/img/drink-water.png" },
@@ -456,7 +334,8 @@
         { name: "Récupération",                       duration: 15,   image: "/img/drink-water.png" }
       ];
 
-      var exerciseTime3 = [
+      var exerciseTime3 = 
+      [
         { name: "Curl en Prise Marteau - Préparation",      duration: 5,    image: "/img/des-exercices-detirement.png" },
         { name: "Série 1",                                  duration: 6,    image: "/img/curl-haltere-prise-neutre.gif" },
         { name: "Repos 1",                                  duration: 6,    image: "/img/drink-water.png" },
@@ -468,7 +347,8 @@
         { name: "Récupération",                             duration: 15,   image: "/img/drink-water.png" }
       ];
 
-      var exerciseTime4 = [
+      var exerciseTime4 = 
+      [
         { name: "Pompes Resserées - Préparation",             duration: 5,    image: "/img/des-exercices-detirement.png" },
         { name: "Série 1",                                    duration: 6,    image: "/img/pompe-musculation.gif" },
         { name: "Repos 1",                                    duration: 6,    image: "/img/drink-water.png" },
@@ -480,7 +360,8 @@
         { name: "Récupération",                               duration: 15,   image: "/img/drink-water.png" }
       ];
 
-      var exerciseTime5 = [
+      var exerciseTime5 = 
+      [
         { name: "Waiter Curls - Préparation",         duration: 5,    image: "/img/des-exercices-detirement.png" },
         { name: "Série 1",                            duration: 6,    image: "/img/waiter-curl.gif" },
         { name: "Repos 1",                            duration: 6,    image: "/img/drink-water.png" },
@@ -515,10 +396,10 @@
       // LES FONCTIONS
 
       var explanationDivs = ["curls-biceps-explanation",
-                             "developpe-couche-explanation", 
-                             "curls-biceps-marteau-explanation", 
-                             "pompes-explanation", 
-                             "waiter-curls-explanation"];
+                              "developpe-couche-explanation", 
+                              "curls-biceps-marteau-explanation", 
+                              "pompes-explanation", 
+                              "waiter-curls-explanation"];
       var currentExplanationDivIndex = 0;
 
       function changeExplanationDiv() 
@@ -653,7 +534,6 @@
       // L'Appel des fonctions
 
       resetTimer();
-
     </script>
 
 
