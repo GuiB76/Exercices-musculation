@@ -37,6 +37,9 @@
         .encadre:hover { background-color: #000000; }
         .encadre h2 { font-size: 2rem;}
         .encadre p { font-size: 1.5rem;}
+        .encadre a:link { color: #ffffff; text-decoration: none; }
+        .encadre a:visited { color: #ffffff; text-decoration: none; }
+        .encadre a:hover { color: #ffffff; text-decoration: none; }
         .imgEntrainements { width: 200px; border-radius: 6%; }
 
       /*===========================================================================*/
@@ -128,6 +131,10 @@
           <ul id="menuMobile">
             <a href="/index.html"> <strong> <li> Accueil </li> </strong> </a> 
             <a href="/entrainements.html"> <strong> <li> Entrainements </li> </strong> </a>
+            <ul>
+              <li> <a href="/entrainements/entrainement-bras-et-pectoraux.html"> </a> Entrainement Bras et Pectoraux </li>
+              <li> <a href="/entrainements/entrainement-bras-et-pectoraux.html"> </a> Entrainement Jambes et Abdominaux </li>
+            </ul>
             <a href="/exercices.html"> <strong> <li> Exercices </li> </strong> </a>
             <a href="#"> <strong> <li> Informations </li> </strong> </a>
           </ul>
@@ -141,22 +148,23 @@
 
       <h1 id="h1-title"> Tous les entrainements </h1>
       <br>
-        <div class="encadre" href="entrainements\entrainement-bras-et-pectoraux.html">
-          <a href="entrainements\entrainement-bras-et-pectoraux.html">
-            <h2> Entrainement Bras et Pectoraux </h2>
-            <p> 
-              42 minutes d'entrainement avec 5 exercices 
-              <br> ciblant les bras et les pectoraux. 
-            </p>
-            <p> 
-              4 séries de 8 à 14 répétitions par exercice. 
-            </p>
-            <br>
-            <img class="imgEntrainements" class="rounded-image" src="img\curl-biceps-avec-halteres-alterne.gif" alt="Illustration de l'exercice">
-          </a>
-        </div>
-        <br> <br> <br>
-        <div class="encadre">
+      <div class="encadre">
+        <a href="/entrainements/entrainement-bras-et-pectoraux.html">
+          <h2> Entrainement Bras et Pectoraux </h2>
+          <p> 
+            42 minutes d'entrainement avec 5 exercices 
+            <br> ciblant les bras et les pectoraux. 
+          </p>
+          <p> 
+            4 séries de 8 à 14 répétitions par exercice. 
+          </p>
+          <br>
+          <img class="imgEntrainements" class="rounded-image" src="/img/curl-biceps-avec-halteres-alterne.gif" alt="Illustration de l'exercice">
+        </a>
+      </div>
+      <br> <br> <br>
+      <div class="encadre">
+        <a href="/entrainements/entrainement-bras-et-pectoraux.html">
           <h2> Jambes et Abdos </h2>
           <p> 
             35 minutes d'entrainement avec 5 exercices 
@@ -167,8 +175,9 @@
             <br> ou de maintien pendant 30 secondes. 
           </p>
           <br>
-          <img class="imgEntrainements" class="rounded-image" src="img\souleve-de-terre-sumo-kettlebell.gif" alt="Illustration de l'exercice">
-        </div>
+          <img class="imgEntrainements" class="rounded-image" src="/img/souleve-de-terre-sumo-kettlebell.gif" alt="Illustration de l'exercice">
+        </a>
+      </div>
   
 
 

@@ -1,0 +1,17 @@
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .footer-center a,
+  .footer-right a {
+    margin-left: 10px;
+  }
