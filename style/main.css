@@ -1,0 +1,39 @@
+  body { background-color:#343541; font-family: Arial, sans-serif; text-align: center; margin: 0px; }
+
+  /* Styles pour la Page */
+  #h1-exercise { color:#ffffff }
+  #exercise-name { font-size: 30px; font-weight: bold; margin-bottom: 10px; }
+  #current-set { font-size: 25px; margin-bottom: 10px; }
+  #timer { font-size: 50px; margin-bottom: 20px; font-weight: bold; }
+  #exercise-image { max-width: 400px; max-height: 400px; }
+  .rounded-image { border-radius: 6%; }
+
+  .encadre 
+  { 
+    display: inline-block; border: 2px solid black; border-radius: 10px; 
+    background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+    color: white;
+  }
+  .encadre:hover { background-color: #000000; }
+
+  .buttons-exercise { margin: 20px; }
+  .buttons-exercise button
+  { 
+    font-size: 20px; padding: 10px 20px; margin: 5px; 
+    background-color: #ffffff; border-radius: 5px;
+  }
+
+  .exercise-explanations 
+  { 
+    display: inline-block; border: 2px solid black; border-radius: 10px; 
+    background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+    color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
+  }
+  .exercise-explainations:hover { background-color: #000000; }
+
+/* Illustrations TOP Page */
+.container  {display: flex; }
+.left-column { flex: 1; }
+.right-column { flex: 2; display: flex; flex-wrap: wrap; }
+.imageCol1 { width: 100%; height: auto; margin-bottom: 10px; }
+.imageCol2 { width: 50%; height: auto; margin-bottom: 10px; }

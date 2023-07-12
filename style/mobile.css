@@ -1,49 +1,41 @@
 @media only screen and (max-width: 768px)
-    {
-        /* Styles header menu */
-        .sticky-header 
-        {
-          position: sticky; top: 0; z-index: 100; /* background-color: #000000; */ /* padding: 1px; */
-          display: flex; justify-content: space-between; align-items: center;
-          /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ height: 60px;
-        }
+{
+  /* Styles header menu */
+  .sticky-header { display: flex; justify-content: space-between; align-items: center; height: 60px; }
 
-        /*
-        .logo-header img { height: 40px; }
-        .menu-header ul { list-style: none; display: flex; margin: 0; padding: 0; width: 100%; }
-        .menu-header li { margin-left: 15px; }
-        .menu-header a { text-decoration: none; color: #ffffff; }
-        .menu-header a:hover { color: #ff0000; }
-        */
+  /* Style pour la Page */
+  #h1-exercise { color:#ffffff }
+  #exercise-name { font-size: 45px; font-weight: bold; margin-bottom: 10px; }
+  #current-set { font-size: 40px; margin-bottom: 10px; }
+  #timer { font-size: 55px; margin-bottom: 20px; font-weight: bold; }
+  #exercise-image { max-width: 400px; max-height: 400px; }
+  .rounded-image { border-radius: 6%; }
 
-        /* Style pour la Page */
-        #h1-exercise { color:#ffffff }
-        #exercise-name { font-size: 45px; font-weight: bold; margin-bottom: 10px; }
-        #current-set { font-size: 40px; margin-bottom: 10px; }
-        #timer { font-size: 55px; margin-bottom: 20px; font-weight: bold; }
-        #exercise-image { max-width: 400px; max-height: 400px; }
-        .rounded-image { border-radius: 6%; }
+  .encadre 
+  { 
+    display: inline-block; border: 2px solid black; border-radius: 10px; 
+    background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+    color: white;
+  }
+  .encadre:hover { background-color: #000000; }
 
-        .encadre 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white;
-        }
-        .encadre:hover { background-color: #000000; }
+  .buttons-exercise { margin: 20px; }
+  .buttons-exercise button
+  { 
+    font-size: 20px; padding: 10px 20px; margin: 5px; 
+    background-color: #ffffff; border-radius: 5px;
+  }
 
-        .buttons-exercise { margin: 20px; }
-        .buttons-exercise button
-        { 
-          font-size: 20px; padding: 10px 20px; margin: 5px; 
-          background-color: #ffffff; border-radius: 5px;
-        }
+  .exercise-explanations 
+  { 
+    display: inline-block; border: 2px solid black; border-radius: 10px; 
+    background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+    color: white; font-size: 1.2rem; text-align: justify; padding: 2rem;
+  }
+  .exercise-explainations:hover { background-color: #000000; }
 
-        .exercise-explanations 
-        { 
-          display: inline-block; border: 2px solid black; border-radius: 10px; 
-          background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-          color: white; font-size: 1.2em; text-align: justify; padding: 2rem;
-        }
-        .exercise-explainations:hover { background-color: #000000; }
-    }
+
+  .container { flex-direction: column; }
+  .right-column { flex: 1; }
+
+}

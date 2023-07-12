@@ -1,17 +1,36 @@
-footer {
-    background-color: #f2f2f2;
+  footer 
+  {
+    background-color: #000000;
     padding: 20px;
     text-align: center;
+    color: #ffffff;
   }
   
   .footer-left,
   .footer-center,
-  .footer-right {
+  .footer-right 
+  {
     display: inline-block;
     vertical-align: middle;
   }
   
   .footer-center a,
-  .footer-right a {
+  .footer-right a 
+  {
     margin-left: 10px;
   }
+
+  .borderFooter
+  {
+    border: black 2px;
+  }
+  .borderFooter a#cgu-link
+  {
+    text-decoration: none;
+  }
+
+  a#cgu-link { text-decoration: none; color: grey; transition: color 0.3s ease; }
+  a#cgu-link:hover { color: #ffffff; }
+
+  a#rgpd-link { text-decoration: none; color: grey; transition: color 0.3s ease; }
+  a#rgpd-link:hover { color: #ffffff; }
