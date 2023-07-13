@@ -3,6 +3,10 @@
 
     .encadre { width: 490px; font-size: 1.5rem;}
 
+    /* Page principale */
+    .encadre-main-page { width: 490px; font-size: 1.5rem;}
+    .imgCouverture-main-page { width: 500px; }
+
     /* Page d'Entrainement Spécifique */
     .EncadresEntrainements { display: inline-block; justify-content: center;}
     .exercise-explanations { border-radius: 5px; padding: 0rem; width: 480px; padding: 10px; }
@@ -20,6 +24,11 @@
   {
     .encadre { width: 300px;}
     #exercise-image { width: 250px; }
+
+    /* Page principale */
+    .encadre-main-page { width: 300px; }
+    .encadre-main-page > h2 { font-size: 1.8rem; }
+    .imgCouverture-main-page { width: 300px; }
 
     /* Page d'Entrainement Spécifique */
     .exercise-explanations { width: 300px; }

@@ -32,23 +32,38 @@
     color: white;
   }
   .encadre:hover { background-color: #000000; }
-  div.encadre a { color: #ffffff; text-decoration: none;}
+  div.encadre a { color: #ffffff; text-decoration: none; }
+
+
+  /* Page Princiaple */
+  .encadre-main-page 
+  { 
+    display: inline-block; border: 2px solid black; border-radius: 10px; 
+    background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
+    color: white;
+  }
+  .encadre-main-page > p { text-align: left; }
+  .imgCouverture-main-page { width: 700px; }
 
 
   /* Page Entrainements */
-  .imgEntrainements { width: 200px; border-radius: 6%;}
+  .imgEntrainements { width: 200px; border-radius: 6%; }
+  .h2-section-entrainements { color: #ffffff; font-weight: bold; }
+
 
   /* Page Exercices */
-  .ExercicesPresentationSection { display: flex; justify-content: center;}
-  .ExercicePresentation { padding-left: 15px; padding-right: 15px;}
-  .imgExercices { width: 200px; border-radius: 6%;}
+  .ExercicesPresentationSection { display: flex; justify-content: center; }
+  .ExercicePresentation { padding-left: 15px; padding-right: 15px; }
+  .imgExercices { width: 200px; border-radius: 6%; }
+
 
   /* Page d'Entrainement */
   section.wrap-exercise-explanation { display: inline-block; }
-  .EncadresEntrainements { justify-content: center;}
+  .EncadresEntrainements { justify-content: center; }
+
 
   /* Page CGU */
-  .h1-cgu-rgpd { font-size: 2rem;}
+  .h1-cgu-rgpd { font-size: 2rem; }
 
 
   /* Illustrations TOP Page */
