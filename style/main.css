@@ -40,7 +40,7 @@
   { 
     display: inline-block; border: 2px solid black; border-radius: 10px; 
     background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-    color: white;
+    color: white; margin: 50px;
   }
   .encadre-main-page > p { text-align: left; }
   .imgCouverture-main-page { width: 700px; }

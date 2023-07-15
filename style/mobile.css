@@ -4,7 +4,7 @@
     .encadre { width: 490px; font-size: 1.5rem;}
 
     /* Page principale */
-    .encadre-main-page { width: 490px; font-size: 1.5rem;}
+    .encadre-main-page { width: 490px; font-size: 1.5rem; margin: 0px;}
     .imgCouverture-main-page { width: 500px; }
 
     /* Page d'Entrainement Spécifique */
