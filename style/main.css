@@ -50,6 +50,26 @@
   .imgEntrainements { width: 200px; border-radius: 6%; }
   .h2-section-entrainements { color: #ffffff; font-weight: bold; }
 
+  /* Pages des entrainements */
+  .dropdown-content 
+  {
+    display: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #2b2c35;
+    padding: 10px;
+    transition: background-color 0.3s;
+    color: white;
+  }
+  .dropdown-btn
+  {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
 
   /* Page Exercices */
   .ExercicesPresentationSection { display: flex; justify-content: center; }

@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="style/footer.css">
     <link rel="stylesheet" type="text/css" href="style/mobile.css">
     <!-- JS -->
+    <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
-    <!-- <script src="scripts/EntrainementBrasPectoraux.js" ></script> -->
   </head>
 
 
@@ -21,27 +21,27 @@
     <header class="sticky-header">
       <nav role="navigation">
         <div id="menuToggleMobile">
-          <input type="checkbox"/>
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menuMobile">
-            <a href="index.html"> <li> Accueil </li> </a> 
-            <a href="entrainements.html"> <li> Les Entrainements </li> </a>
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menuMobile">
+            <a id="lien-accueil" href="index.html"> <li> Accueil </li> </a> 
+            <a id="lien-entrainements" href="entrainements.html"> <li> Les Entrainements </li> </a>
             <ul>
-              <li class="subNavHeader"> <a href="entrainement-bras-et-pectoraux.html"> Entrainements de <br> 20 - 40 - 60 minutes </a> </li>
-              <li class="subNavHeader"> <a href="entrainement-bras-et-pectoraux.html"> Entrainements par partie du corps </a> </li>
+                <li class="subNavHeader"> <a id="lien-entrainements1" href="entrainements-20-40-60-minutes.html"> Entrainements de <br> 20 - 40 - 60 minutes </a> </li>
+                <li class="subNavHeader"> <a id="lien-entrainements2" href="entrainements-par-partie-du-corps.html"> Entrainements par partie du corps </a> </li>
             </ul>
-            <a href="exercices.html"> <li> Les Exercices </li> </a>
+            <a id="lien-exercices" href="exercices.html"> <li> Les Exercices </li> </a>
             <ul>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Abdominaux </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Bras </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Dos </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Epaules </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Jambes </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Pectoraux </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-abdos" href="#"> Abdominaux </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-bras" href="#"> Bras </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-dos" href="#"> Dos </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-epaules" href="#"> Epaules </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-jambes" href="#"> Jambes </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-pectoraux" href="#"> Pectoraux </a> </li>
             </ul>
-          </ul>
+            </ul>
         </div>
       </nav>
       <div id="nav-encadre"></div>
@@ -62,7 +62,6 @@
           <div id="current-set"> </div>
           <br>
           <div id="timer">00:00</div>
-          <!-- Boutons -->
           <div class="buttons-exercise">
             <button id="start">Démarrer</button>
             <button id="pause" disabled>Pause</button>
@@ -78,220 +77,95 @@
   
         </div>
 
+      </section>
+
+      <br><br><br>
+
+      <section class="encadre">
+
+        <h2> 
+          Résumé des différents exercices 
+          <br> de l'entrainement 
+        </h2>
+
+        <br>
+
+        <div class="encadre">
+          <button class="dropdown-btn">1. Biceps</button>
+          <div class="dropdown-content">
+            <h3>Curls Biceps</h3>
+            <p>Les curls biceps sont un exercice de base pour développer les muscles des bras. Tenez une barre d'haltères avec une prise en supination (paumes vers le haut) et pliez les coudes pour amener la barre vers vos épaules.</p>
+            <h3>Curls Prise Marteau</h3>
+            <p>Les curls prise marteau sont similaires aux curls biceps, mais avec une prise neutre (paumes face à face). Cela cible les muscles du biceps de manière légèrement différente.</p>
+            <h3>Curls Prise en Supination</h3>
+            <p>Les curls prise en supination sont similaires aux curls biceps, mais avec une prise en supination plus large. Cela accentue l'implication des muscles du biceps.</p>
+          </div>
+        </div>
+    
+        <div class="encadre">
+          <button class="dropdown-btn">2. Pectoraux</button>
+          <div class="dropdown-content">
+            <h3>Développé Couché</h3>
+            <p>Le développé couché est un exercice classique de musculation qui cible principalement les muscles pectoraux. Allongé sur un banc, poussez une barre chargée vers le haut et redescendez-la jusqu'à la poitrine.</p>
+            <h3>Ecarté Couché</h3>
+            <p>L'écarté couché est un exercice qui cible les muscles pectoraux externes. Allongé sur un banc, tenez une paire d'haltères au-dessus de votre poitrine et écartez vos bras sur les côtés jusqu'à ressentir une bonne tension.</p>
+            <h3>Développé Couché Resserré</h3>
+            <p>Le développé couché resserré est un exercice qui cible principalement les triceps, mais qui sollicite également les muscles pectoraux. Utilisez une prise serrée sur la barre pour accentuer l'implication des triceps.</p>
+          </div>
+        </div>
+
+        <div class="encadre">
+          <button class="dropdown-btn">3. Jambes</button>
+          <div class="dropdown-content">
+            <h3>Squats Goblet</h3>
+            <p>Les squats goblet sont un excellent exercice pour les jambes et les fessiers. Tenez un haltère ou une kettlebell contre votre poitrine et descendez en position accroupie, en gardant le dos droit.</p>
+            <h3>Squats Overhead</h3>
+            <p>Les squats overhead sont une variante avancée des squats qui mettent davantage l'accent sur les muscles des jambes, les fessiers et les épaules. Tenez une barre chargée au-dessus de votre tête pendant que vous descendez en position accroupie.</p>
+            <h3>Squats Front</h3>
+            <p>Les squats front sont une autre variante des squats qui ciblent davantage les quadriceps. Tenez une barre chargée en position frontale, devant vos épaules, et descendez en position accroupie.</p>          
+          </div>
+        </div>
+
         <br><br><br>
 
         <div class="encadre">
-          <div class="buttons-exercise">
-            <button id="change-exercise" onclick="changeExplanationDiv()"> Changer d'exercice </button>
+          <button class="dropdown-btn">4. Epaules</button>
+          <div class="dropdown-content">
+            <h3>Élevations Frontales</h3>
+            <p>Les élévations frontales sont un exercice efficace pour cibler les muscles deltoïdes antérieurs. Tenez une paire d'haltères devant vous, les bras légèrement fléchis, et levez les bras jusqu'à l'horizontale.</p>
+            <h3>Élevations Latérales</h3>
+            <p>Les élévations latérales sont un exercice qui isole les muscles deltoïdes latéraux. Tenez une paire d'haltères le long de vos cuisses et levez les bras sur les côtés jusqu'à l'horizontale.</p>
+            <h3>Développé Épaules</h3>
+            <p>Le développé épaules, également appelé développé militaire, est un exercice de base pour développer les muscles deltoïdes. Tenez une barre d'haltères au niveau des épaules et poussez-la vers le haut jusqu'à ce que les bras soient tendus.</p>          
+          </div>
+        </div>
+
+        <div class="encadre">
+          <button class="dropdown-btn">5. Dos</button>
+          <div class="dropdown-content">
+            <h3>Rowing Bras Droit</h3>
+            <p>Le rowing bras droit est un exercice qui cible principalement les muscles du dos, en particulier les trapèzes et les muscles du milieu du dos. Penchez-vous en avant, tenez une haltère dans une main et ramenez-la vers votre taille en gardant le dos droit.</p>          
+            <h3>Rowing Bras Gauche</h3>
+            <p>Le rowing bras gauche est similaire au rowing bras droit, mais en utilisant l'autre bras pour tenir l'haltère.</p>          
+            <h3>Shrugs</h3>
+            <p>Les shrugs sont un exercice excellent pour cibler les trapèzes supérieurs. Tenez une paire d'haltères le long de votre corps et levez les épaules vers le haut en contractant les trapèzes.</p>          
+          </div>
+        </div>
+
+        <div class="encadre">
+          <button class="dropdown-btn">6. Abdominaux</button>
+          <div class="dropdown-content">
+            <h3>Planche</h3>
+            <p>La planche est un exercice de gainage qui renforce les muscles abdominaux, les muscles du dos et les muscles stabilisateurs. Allongez-vous face contre sol, appuyez sur vos avant-bras et soulevez votre corps, formant une ligne droite des épaules aux chevilles.</p>
+            <h3>Planche Inversée</h3>
+            <p>La planche inversée est un exercice avancé qui cible principalement les muscles abdominaux inférieurs. Allongé sur le dos, soulevez vos jambes tendues vers le plafond et soulevez vos hanches du sol en appuyant sur vos bras.</p>
+            <h3>Mountain Climber</h3>
+            <p>Le mountain climber est un exercice cardiovasculaire qui renforce les abdominaux et les muscles du tronc. En position de planche, alternez le fait d'amener les genoux vers la poitrine en les pliant rapidement.</p>          
           </div>
         </div>
 
       </section>
 
-      <br><br><br>
-
-      <section class="wrap-exercise-explanation">
-        <div id="curls-biceps-explanation" class="exercise-explanations">
-          <h2>
-            Les Curls Biceps
-          </h2>
-          <p>
-            Les curls biceps sont un exercice populaire qui cible spécifiquement les muscles des biceps, situés à l'avant des bras. 
-            <br> Voici comment effectuer les curls biceps avec des haltères :
-            <br><br>
-            <strong> 1. Position de départ : </strong> 
-            <br> Tenez un haltère dans chaque main, bras le long du corps, paumes tournées vers l'avant ou vers vos cuisses.
-            <br><br>
-            <strong> 2. Stabilisation : </strong> 
-            <br> Tenez-vous debout, le dos droit, les épaules légèrement rétractées et les abdominaux contractés pour maintenir une bonne posture.
-            <br><br>
-            <strong> 3. Mouvement : </strong>
-            <br> Fléchissez lentement les coudes tout en gardant les bras le long du corps. 
-            <br> Le mouvement doit se faire uniquement au niveau des coudes. 
-            <br> Contractez les muscles des biceps pour soulever les haltères.
-            <br><br>
-            <strong> 4. Amplitude du mouvement :  </strong>
-            <br> Montez les haltères jusqu'à ce que vos avant-bras soient presque verticaux et que vos biceps soient complètement contractés. 
-            <br> À ce stade, les haltères doivent être proches de vos épaules.
-            <br><br>
-            <strong> 5. Contrôle du mouvement :  </strong> 
-            <br> Faites une pause d'une seconde en haut de la contraction, 
-            <br> puis abaissez lentement les haltères en contrôlant le mouvement jusqu'à revenir à la position de départ.
-            <br><br>
-            <strong> 6. Respiration :  </strong>
-            <br> Inspirez pendant la descente et expirez pendant la montée.
-            <br><br>
-            <strong> 7. Répétitions :  </strong>
-            <br> Effectuez le nombre de répétitions souhaité, en visant généralement de 8 à 14 répétitions par série et 3 à 4 séries.
-            <br><br><br>
-            <strong> Recommandations :  </strong>
-            <br> Il est important de maintenir une bonne technique d'exécution pendant les curls biceps. 
-            <br> Évitez de balancer le corps pour vous aider à soulever les haltères et concentrez-vous sur la contraction musculaire des biceps. 
-            <br> Assurez-vous également de choisir un poids d'haltères approprié en fonction de votre niveau de force et de progression.
-            <br> Les curls biceps peuvent être intégrés dans votre routine d'entraînement pour renforcer et développer les muscles des bras.
-          </p>
-        </div>
-          <div id="developpe-couche-explanation" class="exercise-explanations" style="display: none;">
-            <h2>
-              Le Développé Couché avec Haltères
-            </h2>
-            <p>
-              Le développé couché avec haltères est un exercice polyvalent qui cible principalement les muscles pectoraux, 
-              <br> mais qui sollicite également les muscles des bras, des épaules et du dos.
-              <br> Voici comment effectuer l'effectuer :
-              <br><br>
-              <strong> 1. Position de départ : </strong> 
-              <br> Allongez-vous sur un banc de musculation, les pieds posés à plat sur le sol.
-              <br> Tenez un haltère dans chaque main, les bras tendus au-dessus de votre poitrine, les paumes tournées vers l'avant.
-              <br> Assurez-vous que vos pieds, vos épaules et votre tête sont bien positionnés sur le banc pour une stabilité optimale.
-              <br><br>
-              <strong> 2. Descente : </strong> 
-              <br> Fléchissez lentement les coudes et abaissez les haltères jusqu'à ce qu'ils touchent légèrement votre poitrine de chaque côté.
-              <br> Gardez vos coudes légèrement écartés et vos épaules enfoncées dans le banc.
-              <br> Contrôlez le mouvement pour éviter de relâcher brusquement les haltères.
-              <br><br>
-              <strong> 3. Remontée : </strong>
-              <br> Poussez les haltères vers le haut en les rapprochant l'un de l'autre, en utilisant principalement la force de vos muscles pectoraux.
-              <br> Étendez complètement vos bras sans les verrouiller à la fin du mouvement.
-              <br> Contractez vos muscles pectoraux pendant la phase ascendante pour une contraction maximale.
-              <br><br>
-              <strong> 4. Répétitions et séries :  </strong>
-              <br> Effectuez le nombre souhaité de répétitions, en maintenant une technique d'exécution correcte et en contrôlant le mouvement.
-              <br> Commencez avec un poids approprié à votre niveau de force et augmentez progressivement au fur et à mesure que vous vous sentez à l'aise.
-              <br> Généralement, 3 à 4 séries de 8 à 14 répétitions sont recommandées.
-              <br><br><br>
-              <strong> Recommandations :  </strong> 
-              <br><br> Respirez de manière régulière en expirant pendant la phase ascendante et en inspirant pendant la phase descendante.
-              <br><br> Gardez votre corps stable en maintenant vos pieds au sol et en maintenant un bon contact avec le banc.
-              <br><br> Concentrez-vous sur une bonne technique plutôt que sur la quantité de poids soulevée.
-              <br><br> Si vous êtes débutant ou si vous avez des préoccupations concernant votre sécurité, vous pouvez demander l'aide d'un professionnel de
-              <br> la remise en forme pour vous guider et vous assurer une exécution correcte.
-              <br><br> Le développé couché avec haltères est un exercice efficace pour développer la force 
-              <br> et la masse musculaire des pectoraux, tout en engageant les muscles stabilisateurs.
-            </p>
-        </div>
-        <div id="curls-biceps-marteau-explanation" class="exercise-explanations" style="display: none;">
-          <h2>
-            Le curl biceps avec prise neutre (prise marteau)
-          </h2>
-          <p>
-            Le curl biceps avec prise neutre, également appelé curl marteau, est un exercice qui cible principalement 
-            <br>les muscles du biceps brachial et des avant-bras. 
-            <br> Voici comment effectuer cet exercice :
-            <br><br>
-            <strong> 1. Position de départ : </strong> 
-            <br> Debout, tenez une haltère dans chaque main, les bras le long du corps. 
-            <br> Vos paumes doivent être orientées l'une vers l'autre, c'est-à-dire en prise neutre ou en prise marteau.
-            <br> Gardez le dos droit, les épaules détendues et les coudes près du corps.
-            <br><br>
-            <strong> 2. Montée : </strong> 
-            <br> Fléchissez les coudes tout en gardant les avant-bras immobiles. 
-            <br> Soulevez les haltères vers les épaules en contractant les muscles des biceps.
-            <br> À mesure que vous soulevez les haltères, respirez de manière contrôlée.
-            <br><br>
-            <strong> 3. Sommet : </strong>
-            <br> Lorsque vous atteignez le point de contraction maximale, 
-            <br> faites une pause d'une seconde en resserrant les muscles des biceps.
-            <br><br>
-            <strong> 4. Descente :  </strong>
-            <br> Ensuite, abaissez lentement les haltères en contrôlant le mouvement, en revenant à la position de départ.
-            <br><br>
-            <strong> 5. Séries et Répétitions :  </strong>
-            <br> Répétez le mouvement pour le nombre de répétitions souhaité, en maintenant une bonne forme et une bonne technique.
-            <br> Il est conseillé d'effectuer 3 à 4 séries de 10 à 14 répétitions pour les deux bras.
-            <br><br><br>
-            <strong> Recommandations :  </strong> 
-            <br><br> Il est important de ne pas balancer le corps ou de se servir de l'élan pour soulever les haltères. 
-            <br> Gardez le mouvement sous contrôle et concentrez-vous sur la contraction des muscles des biceps à chaque répétition.
-            <br><br> Le curl biceps avec prise neutre (prise marteau) est un excellent exercice pour développer la force 
-            <br> et la taille des biceps, ainsi que pour travailler les muscles des avant-bras.
-          </p>
-        </div>
-        <div id="pompes-explanation" class="exercise-explanations" style="display: none;">
-          <h2>
-            Les pompes avec bras resserrés
-          </h2>
-          <p>
-            Les pompes avec les bras resserrés sont une variante des pompes traditionnelles dans lesquelles vous rapprochez vos mains 
-            <br> pour travailler davantage les triceps et les muscles de la partie centrale de la poitrine. 
-            <br> Voici comment effectuer des pompes avec les bras resserrés :
-            <br><br>
-            <strong> 1. Position de départ : </strong> 
-            <br> Placez-vous en position de planche, avec les paumes des mains posées au sol, directement sous les épaules.
-            <br> Les doigts doivent pointer vers l'avant, légèrement tournés vers l'intérieur.
-            <br> Rapprochez vos mains jusqu'à ce qu'elles soient alignées directement sous le centre de votre poitrine. 
-            <br> Les mains doivent être espacées d'environ la largeur des épaules ou légèrement plus proches.
-            <br> Assurez-vous que votre corps forme une ligne droite, des épaules aux chevilles.
-            <br> Engagez vos muscles abdominaux et vos fessiers pour maintenir une position solide.
-            <br><br>
-            <strong> 2. Mouvement de descente : </strong> 
-            <br> Fléchissez les coudes et abaissez votre corps vers le sol, en gardant les coudes près du corps 
-            <br> et en maintenant une tension dans les muscles abdominaux.
-            <br><br>
-            <strong> 3. Profondeur de la descente : </strong>
-            <br> Descendez jusqu'à ce que votre poitrine touche presque le sol ou atteigne une profondeur confortable. 
-            <br> Assurez-vous de garder votre dos droit et de ne pas laisser vos hanches s'affaisser ou se relever.
-            <br><br>
-            <strong> 4. Descente :  </strong>
-            <br> Ensuite, abaissez lentement les haltères en contrôlant le mouvement, en revenant à la position de départ.
-            <br><br>
-            <strong> 5. Mouvement de remontée :  </strong>
-            <br> Poussez à travers les paumes des mains et redressez les bras pour revenir à la position de départ. 
-            <br> Veillez à garder les muscles abdominaux engagés pour maintenir une ligne droite pendant toute la durée du mouvement.
-            <br><br>
-            <strong> 5. Séries et Répétitions :  </strong>
-            <br> Répétez le mouvement pour le nombre de répétitions souhaité, en maintenant une bonne forme et une bonne technique.
-            <br> Il est conseillé d'effectuer 3 à 4 séries de 10 à 20 répétitions, voire plus selon votre habitude.
-            <br><br><br>
-            <strong> Recommandations :  </strong> 
-            <br><br>Les pompes avec les bras resserrés ciblent principalement les triceps,
-            <br> tout en engageant également les muscles de la poitrine, des épaules et des muscles stabilisateurs du tronc.
-            <br><br> Comme toujours, assurez-vous de maintenir une bonne technique et de ne pas forcer au-delà de vos capacités. 
-            <br> Si vous ressentez une douleur ou une gêne, arrêtez l'exercice et consultez un professionnel de la santé.
-          </p>
-        </div>
-        <div id="waiter-curls-explanation" class="exercise-explanations" style="display: none;">
-          <h2>
-            Les Waiter Curls 
-          </h2>
-          <p>
-            Les waiter curls sont un exercice de musculation qui cible principalement les muscles du biceps brachial, situés à l'avant du bras. 
-            <br> L'exercice tire son nom de l'idée d'un serveur tenant un plateau, 
-            <br> car la position de départ ressemble à celle d'un serveurtenant un plateau devant lui.
-            <br> Voici comment effectuer cet exercice :
-            <br><br>
-            <strong> 1. Position de départ : </strong> 
-            <br> Tenez un haltère dans vos mains avec une prise en supination (paume de la main vers le haut), comme si vous teniez un plateau.
-            <br> Tenez-vous debout avec le dos droit et les pieds à la largeur des épaules.
-            <br> Gardez vos bras près de votre corps, avec les coudes pliés et le haut des bras en contact avec vos côtés.
-            <br><br>
-            <strong> 2. Montée : </strong> 
-            <br> Fléchissez les coudes pour lever l'haltère vers votre sternum, au centre de votre cage thoracique 
-            <br> en gardant vos poignets en position neutre (ni fléchis ni étendus).
-            <br> Contractez les muscles de vos biceps pendant la montée de l'haltère.
-            <br><br>
-            <strong> 3. Sommet : </strong>
-            <br> Une fois que vous avez atteint la position de contraction maximale, maintenez-la pendant une seconde.
-            <br><br>
-            <strong> 4. Descente :  </strong>
-            <br> Redescendez lentement l'haltère vers la position de départ en contrôlant le mouvement.
-            <br><br>
-            <strong> 5. Séries et Répétitions :  </strong>
-            <br> Répétez le mouvement pour le nombre de répétitions souhaité, en maintenant une bonne forme et une bonne technique.
-            <br> Il est conseillé d'effectuer 3 à 4 séries de 10 à 14 répétitions.
-            <br><br><br>
-            <strong> Recommandations :  </strong> 
-            <br><br> Les waiter curls peuvent être effectués avec différentes charges (haltères) en fonction de votre niveau de force. 
-            <br> Il est important de commencer avec une charge appropriée et d'augmenter progressivement au fil du temps pour éviter les blessures.
-            <br><br> Cet exercice sollicite principalement les muscles du biceps brachial, 
-            <br> mais il peut également impliquer les muscles de l'avant-bras et les muscles stabilisateurs du bras et de l'épaule. 
-            <br> Il est essentiel de maintenir une bonne posture tout au long de l'exercice en gardant le dos droit et les abdominaux engagés.
-            <br><br> Comme pour tout exercice de musculation, il est recommandé de consulter un professionnel de la santé ou un entraîneur personnel 
-            <br> avant de commencer un nouveau programme d'entraînement pour vous assurer que les mouvements sont effectués correctement 
-            <br> et en toute sécurité.
-          </p>
-        </div>
-      </section>
 
     </main>
 
@@ -312,6 +186,34 @@
     </footer>
 
     <script>
+
+      //---------------------------------------------------------------------------\\
+      // Menu Déroulant
+
+      const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+        dropdownBtns.forEach(function(btn) 
+        {
+          btn.addEventListener("click", function() 
+          {
+            const content = this.nextElementSibling;
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+            // Cacher les autres contenus affichés
+            const otherContents = document.querySelectorAll(".dropdown-content");
+            otherContents.forEach(function(otherContent) 
+            {
+              if (otherContent !== content) 
+              {
+                otherContent.style.display = "none";
+              }
+            });
+          });
+        });
+
+    </script>
+
+
+    <script>
+
       //---------------------------------------------------------------------------\\
       // Les Tableaux d'Exercices
 
@@ -322,83 +224,37 @@
         { name: "Biceps - Repos",                            duration: 2,        image: "img/drink-water.png" },
         { name: "Biceps - Prise Marteau",                    duration: 2,        image: "img/curl-biceps-avec-halteres-alterne.gif" },
         { name: "Biceps - Repos",                            duration: 2,        image: "img/drink-water.png" },
-        { name: "Biceps - Supination",                       duration: 2,        image: "img/curl-zottman.gif" },
-        { name: "Pectoraux - Préparation",                   duration: 5,        image: "img/des-exercices-detirement.png" },
+        { name: "Biceps - Pronation",                        duration: 2,        image: "img/curl-zottman.gif" },
+        { name: "Pectoraux - Préparation",                   duration: 2,        image: "img/des-exercices-detirement.png" },
         { name: "Pectoraux - Développé Couché",              duration: 2,        image: "img/developpe-couche-halteres-exercice-musculation.gif" },
         { name: "Pectoraux - Repos",                         duration: 2,        image: "img/drink-water.png" },
         { name: "Pectoraux - Ecarté Couché",                 duration: 2,        image: "img/ecarte-couche-haltere.gif" },
         { name: "Pectoraux - Repos",                         duration: 2,        image: "img/drink-water.png" },
-        { name: "Pectoraux - Développé Couché Resseré",      duration: 2,        image: "img/developpe-couche-serre-avec-halteres.gif" },
-        { name: "Jambes - Préparation",                      duration: 5,        image: "img/des-exercices-detirement.png" },
-        { name: "Jambes - Squats Goblet",                    duration: 6,        image: "img/squat-goblet-exercice-musculation.gif" },
-        { name: "Jambes - Repos",                            duration: 6,        image: "img/drink-water.png" },
-        { name: "Jambes - Squats Overhead",                  duration: 6,        image: "img/squat-overhead-halteres.gif" },
-        { name: "Jambes - Repos",                            duration: 6,        image: "img/drink-water.png" },
-        { name: "Jambes - Squats Front",                     duration: 6,        image: "img/squat-front-avec-halteres.gif" },
-        { name: "Epaules - Préparation",                     duration: 5,        image: "img/des-exercices-detirement.png" },
-        { name: "Epaules - Elevations Frontales",            duration: 6,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 6,        image: "img/drink-water.png" },
-        { name: "Epaules - Elevations Latérales",            duration: 6,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 6,        image: "img/drink-water.png" },
-        { name: "Epaules - Développé Epaules",               duration: 6,        image: "img/developpe-epaules-halteres-debout.gif" },
-        { name: "Dos - Préparation",                         duration: 3,        image: "img/drink-water.png" },
-        { name: "Dos - Rowing Bras Droit",                   duration: 6,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 6,        image: "img/drink-water.png" },
-        { name: "Dos - Rowing Bras Gauche",                  duration: 6,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 6,        image: "img/drink-water.png" },
-        { name: "Dos - Shrugs",                              duration: 6,        image: "img/shrugs-avec-halteres.gif" },
-      ];
-
-      var exerciseTime2 = 
-      [
-        { name: "Développé Couché - Préparation",     duration: 5,    image: "img/des-exercices-detirement.png" },
-        { name: "Série 1",                            duration: 6,    image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Repos 1",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 2",                            duration: 6,    image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Repos 2",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 3",                            duration: 6,    image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Repos 3",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 4",                            duration: 6,    image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Récupération",                       duration: 15,   image: "img/drink-water.png" }
-      ];
-
-      var exerciseTime3 = 
-      [
-        { name: "Curl en Prise Marteau - Préparation",      duration: 5,    image: "img/des-exercices-detirement.png" },
-        { name: "Série 1",                                  duration: 6,    image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Repos 1",                                  duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 2",                                  duration: 6,    image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Repos 2",                                  duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 3",                                  duration: 6,    image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Repos 3",                                  duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 4",                                  duration: 6,    image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Récupération",                             duration: 15,   image: "img/drink-water.png" }
-      ];
-
-      var exerciseTime4 = 
-      [
-        { name: "Pompes Resserées - Préparation",             duration: 5,    image: "img/des-exercices-detirement.png" },
-        { name: "Série 1",                                    duration: 6,    image: "img/pompe-musculation.gif" },
-        { name: "Repos 1",                                    duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 2",                                    duration: 6,    image: "img/pompe-musculation.gif" },
-        { name: "Repos 2",                                    duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 3",                                    duration: 6,    image: "img/pompe-musculation.gif" },
-        { name: "Repos 3",                                    duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 4",                                    duration: 6,    image: "img/pompe-musculation.gif" },
-        { name: "Récupération",                               duration: 15,   image: "img/drink-water.png" }
-      ];
-
-      var exerciseTime5 = 
-      [
-        { name: "Waiter Curls - Préparation",         duration: 5,    image: "img/des-exercices-detirement.png" },
-        { name: "Série 1",                            duration: 6,    image: "img/waiter-curl.gif" },
-        { name: "Repos 1",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 2",                            duration: 6,    image: "img/waiter-curl.gif" },
-        { name: "Repos 2",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 3",                            duration: 6,    image: "img/waiter-curl.gif" },
-        { name: "Repos 3",                            duration: 6,    image: "img/drink-water.png" },
-        { name: "Série 4",                            duration: 6,    image: "img/waiter-curl.gif" },
-        { name: "Récupération",                       duration: 15,   image: "img/drink-water.png" }
+        { name: "Pectoraux - Développé Couché Resserré",     duration: 2,        image: "img/developpe-couche-serre-avec-halteres.gif" },
+        { name: "Jambes - Préparation",                      duration: 2,        image: "img/des-exercices-detirement.png" },
+        { name: "Jambes - Squats Goblet",                    duration: 2,        image: "img/squat-goblet-exercice-musculation.gif" },
+        { name: "Jambes - Repos",                            duration: 2,        image: "img/drink-water.png" },
+        { name: "Jambes - Squats Overhead",                  duration: 2,        image: "img/squat-overhead-halteres.gif" },
+        { name: "Jambes - Repos",                            duration: 2,        image: "img/drink-water.png" },
+        { name: "Jambes - Squats Front",                     duration: 2,        image: "img/squat-front-avec-halteres.gif" },
+        { name: "Epaules - Préparation",                     duration: 2,        image: "img/des-exercices-detirement.png" },
+        { name: "Epaules - Elevations Frontales",            duration: 2,        image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 2,        image: "img/drink-water.png" },
+        { name: "Epaules - Elevations Latérales",            duration: 2,        image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 2,        image: "img/drink-water.png" },
+        { name: "Epaules - Développé Epaules",               duration: 2,        image: "img/developpe-epaules-halteres-debout.gif" },
+        { name: "Dos - Préparation",                         duration: 2,        image: "img/drink-water.png" },
+        { name: "Dos - Rowing Bras Droit",                   duration: 2,        image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 2,        image: "img/drink-water.png" },
+        { name: "Dos - Rowing Bras Gauche",                  duration: 2,        image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 2,        image: "img/drink-water.png" },
+        { name: "Dos - Shrugs",                              duration: 2,        image: "img/shrugs-avec-halteres.gif" },
+        { name: "Abdominaux - Préparation",                  duration: 2,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Planche",                      duration: 2,        image: "img/planche-abdos.gif" },
+        { name: "Abdominaux - Repos",                        duration: 2,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Planche Inversée",             duration: 2,        image: "img/planche-inversee.gif" },
+        { name: "Abdominaux - Repos",                        duration: 2,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Mountain Climber",             duration: 2,        image: "img/mountain-climber-exercice-musculation.gif" },
       ];
 
 
@@ -429,24 +285,8 @@
                               "pompes-explanation", 
                               "waiter-curls-explanation"];
       var currentExplanationDivIndex = 0;
-
-      function changeExplanationDiv() 
-      {
-        var currentExplanationDiv = document.getElementById(explanationDivs[currentExplanationDivIndex]);
-
-        currentExplanationDiv.style.display = "none";
-        currentExplanationDivIndex++;
-
-        if (currentExplanationDivIndex >= explanationDivs.length) 
-        {
-          currentExplanationDivIndex = 0;
-        }
-
-        var nextExplanationDiv = document.getElementById(explanationDivs[currentExplanationDivIndex]);
-        nextExplanationDiv.style.display = "inline-block";
-      }
-
       
+
       function updateTimer() 
       {
         var minutes = Math.floor(secondsRemaining / 60);
@@ -517,36 +357,6 @@
       }
 
 
-      function changeExercise() 
-      {
-        if (exerciseTime === exerciseTime1) 
-        {
-          exerciseTime = exerciseTime2;
-        }
-        else if (exerciseTime === exerciseTime2) 
-        {
-          exerciseTime = exerciseTime3;
-        }
-        else if (exerciseTime === exerciseTime3) 
-        {
-          exerciseTime = exerciseTime4;
-        }
-        else if (exerciseTime === exerciseTime4) 
-        {
-          exerciseTime = exerciseTime5;
-        }
-        else if (exerciseTime === exerciseTime5) 
-        {
-          exerciseTime = exerciseTime1;
-        } 
-        else 
-        {
-          exerciseTime = exerciseTime1;
-        }
-        resetTimer();
-      }
-
-
       function updateExerciseImage() 
       {
         var imagePath = exerciseTime[exerciseIndex].image;
@@ -558,6 +368,7 @@
       pauseButton.addEventListener("click", pauseTimer);
       resetButton.addEventListener("click", resetTimer);
       changeExerciseButton.addEventListener("click", changeExercise);
+
 
       //---------------------------------------------------------------------------\\
       // L'Appel des fonctions

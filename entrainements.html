@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="style/footer.css">
     <link rel="stylesheet" type="text/css" href="style/mobile.css">
     <!-- JS -->
+    <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
   </head>
 
@@ -20,27 +21,27 @@
     <header class="sticky-header">
       <nav role="navigation">
         <div id="menuToggleMobile">
-          <input type="checkbox"/>
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menuMobile">
-            <a href="index.html"> <li> Accueil </li> </a> 
-            <a href="entrainements.html"> <li> Les Entrainements </li> </a>
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menuMobile">
+            <a id="lien-accueil" href="index.html"> <li> Accueil </li> </a> 
+            <a id="lien-entrainements" href="entrainements.html"> <li> Les Entrainements </li> </a>
             <ul>
-              <li class="subNavHeader"> <a href="entrainement-bras-et-pectoraux.html"> Entrainements de <br> 20 - 40 - 60 minutes </a> </li>
-              <li class="subNavHeader"> <a href="entrainement-bras-et-pectoraux.html"> Entrainements par parties du corps </a> </li>
+                <li class="subNavHeader"> <a id="lien-entrainements1" href="entrainements-20-40-60-minutes.html"> Entrainements de <br> 20 - 40 - 60 minutes </a> </li>
+                <li class="subNavHeader"> <a id="lien-entrainements2" href="entrainements-par-partie-du-corps.html"> Entrainements par partie du corps </a> </li>
             </ul>
-            <a href="exercices.html"> <li> Les Exercices </li> </a>
+            <a id="lien-exercices" href="exercices.html"> <li> Les Exercices </li> </a>
             <ul>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Abdominaux </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Bras </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Dos </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Epaules </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Jambes </a> </li>
-              <li class="subNavHeader"> <a href="curls-biceps.html"> Pectoraux </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-abdos" href="#"> Abdominaux </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-bras" href="#"> Bras </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-dos" href="#"> Dos </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-epaules" href="#"> Epaules </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-jambes" href="#"> Jambes </a> </li>
+                <li class="subNavHeader"> <a id="lien-exercices-pectoraux" href="#"> Pectoraux </a> </li>
             </ul>
-          </ul>
+            </ul>
         </div>
       </nav>
       <div id="nav-encadre"></div>
@@ -76,7 +77,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> 40 minutes </h3>
               <p> 
                 40 minutes d'entrainement 
@@ -95,7 +96,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> 60 minutes </h3>
               <p> 
                 60 minutes d'entrainement 
@@ -119,7 +120,7 @@
       <section class="ExercicesPresentationSection">
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="entrainement-bras-et-pectoraux.html">
               <h3> Bras & Pectoraux </h3>
               <p> 
                 53 minutes d'entrainement :
@@ -139,7 +140,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Dos et Epaules </h3>
                 <p> 
                   53 minutes d'entrainement :
@@ -159,7 +160,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Abdominaux et Jambes </h3>
                 <p> 
                   53 minutes d'entrainement :
@@ -184,7 +185,7 @@
       <section class="ExercicesPresentationSection">
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Abdominaux </h3>
               <p> 
                 53 minutes d'entrainement :
@@ -204,7 +205,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Bras </h3>
                 <p> 
                   53 minutes d'entrainement :
@@ -224,7 +225,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Dos </h3>
                 <p> 
                   53 minutes d'entrainement :
@@ -246,7 +247,7 @@
       <section class="ExercicesPresentationSection">
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Epaules </h3>
               <p> 
                 53 minutes d'entrainement :
@@ -266,7 +267,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Jambes </h3>
                 <p> 
                   53 minutes d'entrainement :
@@ -286,7 +287,7 @@
         <br>
         <div class="ExercicePresentation">
           <div class="encadre">
-            <a href="curls-biceps.html">
+            <a href="#">
               <h3> Pectoraux </h3>
                 <p> 
                   53 minutes d'entrainement :
