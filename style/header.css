@@ -65,7 +65,7 @@
         transform-origin: 0% 0%; transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
-    #menuMobile li { padding: 15px 0; font-size: 30px; font-weight: bold; }
+    #menuMobile li { padding: 10px 0; font-size: 30px; font-weight: bold; }
     #menuMobile ul li.subNavHeader { list-style-type: none; padding-left: unset;}
     #menuMobile ul li.subNavHeader a { font-size: 20px;}
     /* Slide it in from the left */
