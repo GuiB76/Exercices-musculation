@@ -49,20 +49,6 @@
     
     <main>
 
-      <!-- 
-        <div class="encadre">
-        <div class="container">
-          <div class="left-column">
-            <img class="imageCol1" src="img/des-exercices-detirement.png" alt="Image 1">
-          </div>
-          <div class="right-column">
-            <img class="imageCol2" src="img/drink-water.png" alt="Image 2">
-            <img class="imageCol2" src="img/drink-water.png" alt="Image 3">
-          </div>
-        </div>
-      </div>
-      -->
-
       <div class="encadre">
         <img class="imgCouverture-main-page" src="img/intérieur-salle-de-sport.png" alt="intérieur d'une salle de sport avec des haltères">
       </div>
@@ -116,6 +102,66 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+
+      function getAdresseIP() 
+      {
+        // Effectuer une requête HTTP GET à ipify pour obtenir l'adresse IP
+        return fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => data.ip)
+        .catch(error => 
+        {
+            console.error('Erreur lors de la récupération de l\'adresse IP :', error);
+            return null;
+          });
+      }
+      // Fonction d'envoi de l'email
+      async function envoyerEmail() 
+      {
+        // Obtenir l'adresse IP de l'utilisateur
+        const adresseIP = await getAdresseIP();
+        // Récupérer les informations de l'utilisateur
+        const date = new Date().toLocaleDateString();
+        const heure = new Date().toLocaleTimeString();
+        const navigateur = navigator.userAgentData;
+        const langueNavigateur = navigator.language;
+        // Stocker les informations de l'utilisateur
+        const informationsUtilisateur = `
+          Adresse IP: ${adresseIP}
+          Date: ${date}
+          Heure: ${heure}
+          Navigateur: ${navigateur}
+          Langue du navigateur: ${langueNavigateur}
+        `;
+        // Configurer les paramètres de l'e-mail
+        const email = 
+        {
+          SecureToken : "c644d450-72b1-483e-b051-dc3ef410d7ab",
+          To: 'guilermob27370@gmail.com',
+          From: 'lepetitboulevard@gmail.com',
+          Subject: 'Informations sur l\'utilisateur',
+          Body: informationsUtilisateur
+        };
+        // Envoyer l'e-mail en utilisant l'API SMTPJS
+        Email.send(email)
+        .then(() => 
+        {
+          console.log('E-mail envoyé avec succès !');
+        })
+        .catch(error => 
+        {
+          console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
+        });
+      }
+        
+      // Appel de la fonction pour envoyer l'e-mail
+      envoyerEmail();
+
+    </script>
 
   </body>
 
