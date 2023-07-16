@@ -1,92 +1,71 @@
-Fais moi un résumé explicatif de chacun de ces exercices qui se concentrent sur 6 parties du corps. 
-Pour un article de blog sur la musculation, avec les balises html.
-1. Biceps :
-    - Curls Biceps
-    - Curls Prise Marteau
-    - Curls Prise en Supination
-2. Pectoraux :
-    - Développé Couché
-    - Ecarté Couché
-    - Développé Couché Resserré
-3. Jambes :
-    - Squats Goblet
-    - Squats Overhead
-    - Squats Front
-4. Epaules :
-    - Elevations Frontales
-    - Elevations Latérales
-    - Développé Epaules
-5. Dos :
-    - Rowing bras droit
-    - Rowing bras gauche
-    - Shrugs
-6. Abdominaux :
-    - Planche 
-    - Planche Inversée
-    - Mountain Climber
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+    <script>
 
+      function getAdresseIP() 
+      {
+        // Effectuer une requête HTTP GET à ipify pour obtenir l'adresse IP
+        return fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => data.ip)
+        .catch(error => 
+        {
+            console.error('Erreur lors de la récupération de l\'adresse IP :', error);
+            return null;
+          });
+      }
+      // Fonction d'envoi de l'email
+      async function envoyerEmail() 
+      {
+        // Obtenir l'adresse IP de l'utilisateur
+        const adresseIP = await getAdresseIP();
+        // Récupérer les informations de l'utilisateur
+        const date = new Date().toLocaleDateString();
+        const heure = new Date().toLocaleTimeString();
+        const navigateur = navigator.userAgentData;
+        const langueNavigateur = navigator.language;
+        // Stocker les informations de l'utilisateur
+        const informationsUtilisateur = `
+          Adresse IP: ${adresseIP}
+          Date: ${date}
+          Heure: ${heure}
+          Navigateur: ${navigateur}
+          Langue du navigateur: ${langueNavigateur}
+        `;
+        // Configurer les paramètres de l'e-mail
+        const email = 
+        {
+          SecureToken : "c644d450-72b1-483e-b051-dc3ef410d7ab",
+          To: 'guilermob27370@gmail.com',
+          From: 'lepetitboulevard@gmail.com',
+          Subject: 'Informations sur l\'utilisateur',
+          Body: informationsUtilisateur
+        };
+        // Envoyer l'e-mail en utilisant l'API SMTPJS
+        Email.send(email)
+        .then(() => 
+        {
+          console.log('E-mail envoyé avec succès !');
+        })
+        .catch(error => 
+        {
+          console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
+        });
+      }
+        
+      // Appel de la fonction pour envoyer l'e-mail
+      envoyerEmail();
 
+    </script>
 
-
-
-
-Explique moi cette fonction par rapport à ce footer :
-
-<script>
-    window.addEventListener('DOMContentLoaded', function() 
-    {
-        // Changer les textes et liens du footer
-        document.getElementById('site-name').textContent = "FaisDuSportBatard";
-        document.getElementById('copyright').textContent = new Date().getFullYear();
-        document.getElementById('cgu-link').href = "cgu.html";
-        document.getElementById('rgpd-link').href = "rgpd.html";
-    });
-</script>
-
-<footer>
-    <div class="borderFooter">
-        <div class="footer-left">
-        <span id="site-name"></span> &copy; <span id="copyright"></span>
-        </div>
-        <div class="footer-center">
-        <a href="#" id="cgu-link"> Conditions Générales d'Utilisation </a>
-        </div>
-        <div class="footer-right">
-        <a href="#" id="rgpd-link"> Politique de Confidentialité (RGPD)</a>
-        </div>
-    </div>
-</footer>
-
-
-
-Fais moi la même chose avec ce menu de naviagtion qui sert de header :
-
-<header class="sticky-header">
-    <nav role="navigation">
-    <div id="menuToggleMobile">
-        <input type="checkbox"/>
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menuMobile">
-        <a id="lien-accueil" href="index.html"> <li> Accueil </li> </a> 
-        <a id="lien-entrainements" href="entrainements.html"> <li> Les Entrainements </li> </a>
-        <ul>
-            <li class="subNavHeader"> <a id="lien-entrainements1" href="entrainements-20-40-60-minutes.html"> Entrainements de <br> 20 - 40 - 60 minutes </a> </li>
-            <li class="subNavHeader"> <a id="lien-entrainements2" href="entrainements-par-partie-du-corps.html"> Entrainements par partie du corps </a> </li>
-        </ul>
-        <a id="lien-exercices" href="exercices.html"> <li> Les Exercices </li> </a>
-        <ul>
-            <li class="subNavHeader"> <a id="lien-exercices-abdos" href="#"> Abdominaux </a> </li>
-            <li class="subNavHeader"> <a id="lien-exercices-bras" href="#"> Bras </a> </li>
-            <li class="subNavHeader"> <a id="lien-exercices-dos" href="#"> Dos </a> </li>
-            <li class="subNavHeader"> <a id="lien-exercices-epaules" href="#"> Epaules </a> </li>
-            <li class="subNavHeader"> <a id="lien-exercices-jambes" href="#"> Jambes </a> </li>
-            <li class="subNavHeader"> <a id="lien-exercices-pectoraux" href="#"> Pectoraux </a> </li>
-        </ul>
-        </ul>
-    </div>
-    </nav>
-    <div id="nav-encadre"></div>
-</header>
+    <script> 
+      Email.send(
+      {
+        SecureToken : "c644d450-72b1-483e-b051-dc3ef410d7ab",
+        To: 'guilermob27370@gmail.com',
+        From: 'lepetitboulevard@gmail.com',
+        Subject: 'Informations sur l\'utilisateur',
+        Body : "email"
+      })
+      .then( message => alert(message) );
+    </script>
