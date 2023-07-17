@@ -58,8 +58,8 @@
 
         <div class="encadre">
           <br>
-          <div id="exercise-name"></div>
-          <div id="current-set"> </div>
+          <div id="exercise-name"> Biceps</div>
+          <div id="current-set"> Préparation </div>
           <br>
           <div id="timer">00:00</div>
           <div class="buttons-exercise">
@@ -73,7 +73,7 @@
   
         <div class="encadre">
   
-          <img id="exercise-image" class="rounded-image" src="" alt="Illustration de l'exercice">
+          <img id="exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
   
         </div>
 
@@ -97,8 +97,8 @@
             <p>Les curls biceps sont un exercice de base pour développer les muscles des bras. Tenez une barre d'haltères avec une prise en supination (paumes vers le haut) et pliez les coudes pour amener la barre vers vos épaules.</p>
             <h3>Curls Prise Marteau</h3>
             <p>Les curls prise marteau sont similaires aux curls biceps, mais avec une prise neutre (paumes face à face). Cela cible les muscles du biceps de manière légèrement différente.</p>
-            <h3>Curls Prise en Supination</h3>
-            <p>Les curls prise en supination sont similaires aux curls biceps, mais avec une prise en supination plus large. Cela accentue l'implication des muscles du biceps.</p>
+            <h3>Curls Prise en Pronation</h3>
+            <p>Les curls prise en pronation sont similaires aux curls biceps, mais avec une prise en pronation qui affecte l'avant bras. Cela accentue l'implication des muscles de l'avant bras.</p>
           </div>
         </div>
 
@@ -120,9 +120,9 @@
             <h3>Squats Goblet</h3>
             <p>Les squats goblet sont un excellent exercice pour les jambes et les fessiers. Tenez un haltère ou une kettlebell contre votre poitrine et descendez en position accroupie, en gardant le dos droit.</p>
             <h3>Squats Overhead</h3>
-            <p>Les squats overhead sont une variante avancée des squats qui mettent davantage l'accent sur les muscles des jambes, les fessiers et les épaules. Tenez une barre chargée au-dessus de votre tête pendant que vous descendez en position accroupie.</p>
+            <p>Les squats overhead sont une variante avancée des squats qui mettent davantage l'accent sur les muscles des jambes, les fessiers et les épaules. Tenez deux haltères chargés au-dessus de votre tête pendant que vous descendez en position accroupie.</p>
             <h3>Squats Front</h3>
-            <p>Les squats front sont une autre variante des squats qui ciblent davantage les quadriceps. Tenez une barre chargée en position frontale, devant vos épaules, et descendez en position accroupie.</p>          
+            <p>Les squats front sont une autre variante des squats qui ciblent davantage les quadriceps. Tenez un haltère chargé en position frontale, devant vos épaules, et descendez en position accroupie.</p>          
           </div>
         </div>
 
@@ -217,52 +217,52 @@
       //---------------------------------------------------------------------------\\
       // Les Tableaux d'Exercices
 
-      var exerciseTime1 = 
+      var training20mins = 
       [
-        { name: "Biceps - Préparation",                      duration: 3,        image: "img/des-exercices-detirement.png" },
-        { name: "Biceps - Curls",                            duration: 2,        image: "img/curl-biceps-avec-halteres-alterne.gif" },
-        { name: "Biceps - Repos",                            duration: 2,        image: "img/drink-water.png" },
-        { name: "Biceps - Prise Marteau",                    duration: 2,        image: "img/curl-biceps-avec-halteres-alterne.gif" },
-        { name: "Biceps - Repos",                            duration: 2,        image: "img/drink-water.png" },
-        { name: "Biceps - Pronation",                        duration: 2,        image: "img/curl-zottman.gif" },
-        { name: "Pectoraux - Préparation",                   duration: 2,        image: "img/des-exercices-detirement.png" },
-        { name: "Pectoraux - Développé Couché",              duration: 2,        image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Pectoraux - Repos",                         duration: 2,        image: "img/drink-water.png" },
-        { name: "Pectoraux - Ecarté Couché",                 duration: 2,        image: "img/ecarte-couche-haltere.gif" },
-        { name: "Pectoraux - Repos",                         duration: 2,        image: "img/drink-water.png" },
-        { name: "Pectoraux - Développé Couché Resserré",     duration: 2,        image: "img/developpe-couche-serre-avec-halteres.gif" },
-        { name: "Jambes - Préparation",                      duration: 2,        image: "img/des-exercices-detirement.png" },
-        { name: "Jambes - Squats Goblet",                    duration: 2,        image: "img/squat-goblet-exercice-musculation.gif" },
-        { name: "Jambes - Repos",                            duration: 2,        image: "img/drink-water.png" },
-        { name: "Jambes - Squats Overhead",                  duration: 2,        image: "img/squat-overhead-halteres.gif" },
-        { name: "Jambes - Repos",                            duration: 2,        image: "img/drink-water.png" },
-        { name: "Jambes - Squats Front",                     duration: 2,        image: "img/squat-front-avec-halteres.gif" },
-        { name: "Epaules - Préparation",                     duration: 2,        image: "img/des-exercices-detirement.png" },
-        { name: "Epaules - Elevations Frontales",            duration: 2,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 2,        image: "img/drink-water.png" },
-        { name: "Epaules - Elevations Latérales",            duration: 2,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 2,        image: "img/drink-water.png" },
-        { name: "Epaules - Développé Epaules",               duration: 2,        image: "img/developpe-epaules-halteres-debout.gif" },
-        { name: "Dos - Préparation",                         duration: 2,        image: "img/drink-water.png" },
-        { name: "Dos - Rowing Bras Droit",                   duration: 2,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 2,        image: "img/drink-water.png" },
-        { name: "Dos - Rowing Bras Gauche",                  duration: 2,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 2,        image: "img/drink-water.png" },
-        { name: "Dos - Shrugs",                              duration: 2,        image: "img/shrugs-avec-halteres.gif" },
-        { name: "Abdominaux - Préparation",                  duration: 2,        image: "img/drink-water.png" },
-        { name: "Abdominaux - Planche",                      duration: 2,        image: "img/planche-abdos.gif" },
-        { name: "Abdominaux - Repos",                        duration: 2,        image: "img/drink-water.png" },
-        { name: "Abdominaux - Planche Inversée",             duration: 2,        image: "img/planche-inversee.gif" },
-        { name: "Abdominaux - Repos",                        duration: 2,        image: "img/drink-water.png" },
-        { name: "Abdominaux - Mountain Climber",             duration: 2,        image: "img/mountain-climber-exercice-musculation.gif" },
+        { name: "Biceps - Préparation",                      duration: 30,        image: "img/illustrations/haltères4.jpg" },
+        { name: "Biceps - Curls",                            duration: 45,        image: "img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Biceps - Repos",                            duration: 15,        image: "img/drink-water.png" },
+        { name: "Biceps - Prise Marteau",                    duration: 45,        image: "img/curl-haltere-prise-neutre.gif" },
+        { name: "Biceps - Repos",                            duration: 15,        image: "img/drink-water.png" },
+        { name: "Biceps - Curls Supination",                 duration: 45,        image: "img/curl-zottman.gif" },
+        { name: "Pectoraux - Préparation",                   duration: 30,        image: "img/des-exercices-detirement.png" },
+        { name: "Pectoraux - Développé Couché",              duration: 45,        image: "img/developpe-couche-halteres-exercice-musculation.gif" },
+        { name: "Pectoraux - Repos",                         duration: 15,        image: "img/drink-water.png" },
+        { name: "Pectoraux - Ecarté Couché",                 duration: 45,        image: "img/ecarte-couche-haltere.gif" },
+        { name: "Pectoraux - Repos",                         duration: 15,        image: "img/drink-water.png" },
+        { name: "Pectoraux - Développé Couché Resserré",     duration: 45,        image: "img/developpe-couche-serre-avec-halteres.gif" },
+        { name: "Jambes - Préparation",                      duration: 30,        image: "img/des-exercices-detirement.png" },
+        { name: "Jambes - Squats Goblet",                    duration: 45,        image: "img/squat-goblet-exercice-musculation.gif" },
+        { name: "Jambes - Repos",                            duration: 15,        image: "img/drink-water.png" },
+        { name: "Jambes - Squats Overhead",                  duration: 45,        image: "img/squat-overhead-halteres.gif" },
+        { name: "Jambes - Repos",                            duration: 15,        image: "img/drink-water.png" },
+        { name: "Jambes - Squats Front",                     duration: 45,        image: "img/squat-front-avec-halteres.gif" },
+        { name: "Epaules - Préparation",                     duration: 30,        image: "img/des-exercices-detirement.png" },
+        { name: "Epaules - Elevations Frontales",            duration: 45,        image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 15,        image: "img/drink-water.png" },
+        { name: "Epaules - Elevations Latérales",            duration: 45,        image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 15,        image: "img/drink-water.png" },
+        { name: "Epaules - Développé Epaules",               duration: 45,        image: "img/developpe-epaules-halteres-debout.gif" },
+        { name: "Dos - Préparation",                         duration: 30,        image: "img/drink-water.png" },
+        { name: "Dos - Rowing Bras Droit",                   duration: 45,        image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 15,        image: "img/drink-water.png" },
+        { name: "Dos - Rowing Bras Gauche",                  duration: 45,        image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 15,        image: "img/drink-water.png" },
+        { name: "Dos - Shrugs",                              duration: 45,        image: "img/shrugs-avec-halteres.gif" },
+        { name: "Abdominaux - Préparation",                  duration: 30,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Planche",                      duration: 45,        image: "img/planche-abdos.gif" },
+        { name: "Abdominaux - Repos",                        duration: 15,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Planche Inversée",             duration: 45,        image: "img/planche-inversee.gif" },
+        { name: "Abdominaux - Repos",                        duration: 15,        image: "img/drink-water.png" },
+        { name: "Abdominaux - Mountain Climber",             duration: 45,        image: "img/mountain-climber-exercice-musculation.gif" },
+        { name: "Entrainement - Terminé",                    duration: 30,        image: "img/illustrations/haltères4.jpg" }
       ];
-
 
       //---------------------------------------------------------------------------\\
       // Les Variables
 
       var exerciseIndex = 0;
-      var exerciseTime = exerciseTime1;
+      var exerciseTime = training20mins;
       var secondsRemaining = exerciseTime[exerciseIndex].duration;
       var intervalId;
 
@@ -278,13 +278,6 @@
 
       //---------------------------------------------------------------------------\\
       // LES FONCTIONS
-
-      var explanationDivs = ["curls-biceps-explanation",
-                              "developpe-couche-explanation", 
-                              "curls-biceps-marteau-explanation", 
-                              "pompes-explanation", 
-                              "waiter-curls-explanation"];
-      var currentExplanationDivIndex = 0;
       
 
       function updateTimer() 
