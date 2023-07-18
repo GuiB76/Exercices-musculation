@@ -1,7 +1,7 @@
   body 
   { 
     background-color:#343541; font-family: Arial, sans-serif; 
-    text-align: center; margin: 0px; display: inline; 
+    text-align: center; margin: 0px; display: inline;
   }
 
   /* Styles communs pour les Pages Entrainement et Exercice */
@@ -41,10 +41,25 @@
   { 
     display: inline-block; border: 2px solid black; border-radius: 10px; 
     background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-    color: white; margin: 50px;
+    color: white; margin: 50px; max-width: 1920px;
   }
-  .encadre-main-page > p { text-align: left; }
-  .imgCouverture-main-page { width: 700px; }
+  
+  .containerTopMainPage { display: flex; flex-wrap: wrap; }
+  .columnTopMainPage { flex: 1; padding: 10px; box-sizing: border-box; }
+  .columnTopMainPage:nth-child(1) { background-color: #2b2c35; color: white; text-align: end; }
+  .columnTopMainPage:nth-child(2) { background-color: #2b2c35; color: white; text-align: start; }
+  .imageColumnTopMainPage { width: 400px; border-radius: 2%; }
+
+  .titre-containerMainPage { text-align: center; }
+  .textePresentation-containerMainPage { text-align: center; }
+  .containerMainPage { display: flex; flex-wrap: wrap; }
+  .columnMainPage { flex: 1; padding: 10px; box-sizing: border-box; margin: auto 0; }
+  .sousTitre-containerMainPage { text-align: justify; }
+  .texteColumnPresentation-containerMainPage { text-align: left; }
+  .columnMainPage:nth-child(1) { background-color: #2b2c35; color: white; }
+  .columnMainPage:nth-child(2) { background-color: #2b2c35; color: white; }
+  .imageColumnMainPage { max-width: 100%; height:auto; border-radius: 2%; }
+
 
 
   /* Page Entrainements */
