@@ -61,10 +61,16 @@
   .imageColumnMainPage { max-width: 100%; height:auto; border-radius: 2%; }
 
 
-
   /* Page Entrainements */
   .imgEntrainements { width: 200px; border-radius: 6%; }
   .h2-section-entrainements { color: #ffffff; font-weight: bold; }
+
+
+  /* Page Entrainement 20-40-60 minutes */
+  .mosaic { display: none; /* Masquer la mosaïque sur mobile */}
+  @media screen and (min-width: 769px) { .mosaic { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; } }
+  .mosaic img { width: 100%; height: auto; }
+
 
   /* Pages des entrainements */
   .dropdown-content 
@@ -102,10 +108,3 @@
   /* Page CGU */
   .h1-cgu-rgpd { font-size: 2rem; }
 
-
-  /* Illustrations TOP Page */
-  .container  {display: flex; }
-  .left-column { flex: 1; }
-  .right-column { flex: 2; display: flex; flex-wrap: wrap; }
-  .imageCol1 { width: 100%; height: auto; margin-bottom: 10px; }
-  .imageCol2 { width: 50%; height: auto; margin-bottom: 10px; }

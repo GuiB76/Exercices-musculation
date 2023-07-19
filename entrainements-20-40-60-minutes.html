@@ -127,6 +127,12 @@
 
     <br><br><br>
 
+    <div class="mosaic">
+      <img src="img\illustrations\haltères2.jpg" alt="Image 1">
+      <img src="img\illustrations\haltères-et-tapis.jpg" alt="Image 2">
+      <img src="img\illustrations\haltères5.jpg" alt="Image 3">
+    </div>
+
     <footer>
       <div class="borderFooter">
         <div class="footer-left">
@@ -140,6 +146,15 @@
         </div>
       </div>
     </footer>
+
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function() 
+      {
+        var mosaic = document.querySelector(".mosaic");
+        mosaic.style.display = "grid";
+      });
+    </script>
 
   </body>
 
