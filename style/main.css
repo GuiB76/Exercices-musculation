@@ -4,6 +4,8 @@
     text-align: center; margin: 0px; display: inline;
   }
 
+  header { background-color: #ffffff; height: 50px;}
+
   /* Styles communs pour les Pages Entrainement et Exercice */
   #h1-title { color:#ffffff }
   #h1-exercise { color:#ffffff }
