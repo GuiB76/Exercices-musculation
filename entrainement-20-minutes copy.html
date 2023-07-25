@@ -13,6 +13,7 @@
     <!-- JS -->
     <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
+    <script src="scripts/sound.js"></script>
   </head>
 
 
@@ -76,6 +77,19 @@
           <div id="next-exercise-name"> </div>
           <div id="next-set"> </div>
           <img id="next-exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
+        </div>
+
+        <br>
+
+        <div class="encadre">
+          <button id="toggle-sound-settings"> Cacher/Afficher les paramètres du son </button>
+          <div id="sound-settings">
+            <label for="volume"> Volume du bip : </label>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+            <audio id="bip-audio" src="sound/bipSonore.mp3"></audio>
+            <label for="mute"> Désactiver le bip : </label>
+            <input type="checkbox" id="mute">
+          </div>
         </div>
 
       </section>
@@ -218,7 +232,7 @@
     <script>
 
       //---------------------------------------------------------------------------\\
-      // Les Tableaux d'Exercices
+      // LES TABLEAUX D'EXERCICES
 
       var training20mins = 
       [
@@ -263,7 +277,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // Les Variables
+      // LES VARIABLES
 
       var exerciseIndex = 0;
       var exerciseTime = training20mins;
@@ -440,7 +454,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // Evènements
+      // LES EVENEMENTS
 
       startButton.addEventListener("click", startTimer);
       pauseButton.addEventListener("click", pauseTimer);
@@ -450,7 +464,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // L'Appel des fonctions
+      // L'APPEL DES FONCTIONS
 
       resetTimer();
 
