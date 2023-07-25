@@ -4,15 +4,16 @@
     text-align: center; margin: 0px; display: inline;
   }
 
-  header { background-color: #ffffff; height: 50px;}
+  
 
   /* Styles communs pour les Pages Entrainement et Exercice */
   #h1-title { color:#ffffff }
   #h1-exercise { color:#ffffff }
   #exercise-name { font-size: 30px; font-weight: bold; margin-bottom: 10px; }
   #current-set { font-size: 25px; margin-bottom: 10px; }
-  #timer { font-size: 50px; margin-bottom: 20px; font-weight: bold; }
+  #timer { font-size: 50px; margin-bottom: -20px; font-weight: bold; }
   #exercise-image { max-width: 400px; max-height: 400px; }
+  #next-exercise-image { max-width: 400px; max-height: 400px; }
   .rounded-image { border-radius: 6%; }
   .buttons-exercise { margin: 20px; color: #000000; }
   .buttons-exercise button
@@ -32,7 +33,7 @@
   { 
     display: inline-block; border: 2px solid black; border-radius: 10px; 
     background-color: #2b2c35; padding: 10px; transition: background-color 0.3s;
-    color: white;
+    color: white; margin-bottom: 10px;
   }
   .encadre:hover { background-color: #000000; }
   div.encadre a { color: #ffffff; text-decoration: none; }

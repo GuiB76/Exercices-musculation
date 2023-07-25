@@ -45,6 +45,7 @@
   {
     .encadre { width: 300px;}
     #exercise-image { width: 250px; }
+    #next-exercise-image { width: 250px; }
 
     /* Page principale */
     .encadre-main-page { width: 300px; }

@@ -57,10 +57,10 @@
       <section class="EncadresExercices">
 
         <div class="encadre">
-          <br>
           <div id="exercise-name"> Biceps</div>
           <div id="current-set"> Préparation </div>
           <div id="timer">00:00</div>
+          <audio id="countdownSound" src="path_to_sound_file.mp3"></audio>
           <div class="buttons-exercise">
             <button id="start">Démarrer</button>
             <button id="pause" disabled>Pause</button>
@@ -68,13 +68,14 @@
           </div>
           <img id="exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
         </div>
-  
-        <br><br><br>
-  
+
+        <br>
+
         <div class="encadre">
-  
-          <img id="exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
-  
+          <div> <strong> Prochaine Série </strong> </div>
+          <div id="next-exercise-name"> </div>
+          <div id="next-set"> </div>
+          <img id="next-exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
         </div>
 
       </section>
@@ -185,10 +186,12 @@
       </div>
     </footer>
 
+    <!-- -------------------------------JavaScript-------------------------------- -->
+
     <script>
 
       //---------------------------------------------------------------------------\\
-      // Menu Déroulant
+      // Menu Déroulant Explications Exercices
 
       const dropdownBtns = document.querySelectorAll(".dropdown-btn");
         dropdownBtns.forEach(function(btn) 
@@ -219,13 +222,13 @@
 
       var training20mins = 
       [
-        { name: "Biceps - Préparation",                      duration: 30,        image: "img/illustrations/haltères4.jpg" },
-        { name: "Biceps - Curls",                            duration: 45,        image: "img/curl-biceps-avec-halteres-alterne.gif" },
-        { name: "Biceps - Repos",                            duration: 15,        image: "img/drink-water.png" },
-        { name: "Biceps - Prise Marteau",                    duration: 45,        image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Biceps - Repos",                            duration: 15,        image: "img/drink-water.png" },
-        { name: "Biceps - Curls Supination",                 duration: 45,        image: "img/curl-zottman.gif" },
-        { name: "Pectoraux - Préparation",                   duration: 30,        image: "img/drink-water.png" },
+        { name: "Biceps - Préparation",                      duration: 3,         image: "img/illustrations/haltères4.jpg" },
+        { name: "Biceps - Curls",                            duration: 5,         image: "img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Biceps - Repos",                            duration: 5,         image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Prise Marteau",                    duration: 5,        image: "img/curl-haltere-prise-neutre.gif" },
+        { name: "Biceps - Repos",                            duration: 5,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Curls Supination",                 duration: 5,        image: "img/curl-zottman.gif" },
+        { name: "Pectoraux - Préparation",                   duration: 30,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
         { name: "Pectoraux - Développé Couché",              duration: 45,        image: "img/developpe-couche-halteres-exercice-musculation.gif" },
         { name: "Pectoraux - Repos",                         duration: 15,        image: "img/drink-water.png" },
         { name: "Pectoraux - Ecarté Couché",                 duration: 45,        image: "img/ecarte-couche-haltere.gif" },
@@ -258,6 +261,7 @@
         { name: "Entrainement - Terminé",                    duration: 30,        image: "img/illustrations/haltères4.jpg" }
       ];
 
+
       //---------------------------------------------------------------------------\\
       // Les Variables
 
@@ -275,10 +279,49 @@
       var exerciseImageElement = document.getElementById("exercise-image");
       var changeExerciseButton = document.getElementById("change-exercise");
 
+      var nextExerciseIndex = 1;
+      var nextExerciseNameElement = document.getElementById("next-exercise-name");
+      var nextSetElement = document.getElementById("next-set");
+      var nextExerciseImageElement = document.getElementById("next-exercise-image");
+
+      var wakeLock = null;
+
+
+      //---------------------------------------------------------------------------\\
+      // WAKE LOCK pour garder le téléphone allumé lors des exercices de l'entrainement
+
+      // Fonction pour demander le Wake Lock
+      async function requestWakeLock() 
+      {
+        try 
+        {
+          const wakeLock = await navigator.wakeLock.request("screen");
+          console.log("Wake Lock activé !");
+          return wakeLock;
+        } 
+        catch (err) 
+        {
+          console.error("Impossible d'activer le Wake Lock : ", err);
+        }
+      }
+
+      // Fonction pour relâcher le Wake Lock
+      async function releaseWakeLock(wakeLock) 
+      {
+        try 
+        {
+          await wakeLock.release();
+          console.log("Wake Lock relâché !");
+        } 
+        catch (err) 
+        {
+          console.error("Erreur lors du relâchement du Wake Lock : ", err);
+        }
+      }
+
 
       //---------------------------------------------------------------------------\\
       // LES FONCTIONS
-      
 
       function updateTimer() 
       {
@@ -288,6 +331,16 @@
         timerElement.textContent = ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
 
         secondsRemaining--;
+
+        if (seconds <= 5) 
+        {
+          timerElement.style.color = "green";
+          playCountdownSound();
+        } 
+        else 
+        {
+          timerElement.style.color = "white";
+        }
 
         if (secondsRemaining < 0) 
         {
@@ -300,22 +353,38 @@
             exerciseNameElement.textContent = exerciseTime[exerciseIndex].name.split(" - ")[0];
             startTimer();
             updateExerciseImage();
+            nextExerciseIndex = exerciseIndex + 1; 
+            previewNextExercise(); 
+            //appel du wake lock --> lancé
+            if (!wakeLock) { wakeLock = requestWakeLock(); }
           } 
           else 
           {
             timerElement.textContent = "Terminé !";
             startButton.disabled = true;
             pauseButton.disabled = true;
+            //fermeture du wake lock --> fin
+            if (wakeLock) { releaseWakeLock(wakeLock); wakeLock = null; }
           }
         }
 
-        if (seconds <= 5) 
+      }
+
+
+      function previewNextExercise() 
+      {
+        if (nextExerciseIndex < exerciseTime.length) 
         {
-          timerElement.style.color = "green";
+          nextExerciseNameElement.textContent = exerciseTime[nextExerciseIndex].name.split(" - ")[0];
+          nextSetElement.textContent = exerciseTime[nextExerciseIndex].name.split(" - ")[1];
+          var imagePath = exerciseTime[nextExerciseIndex].image;
+          nextExerciseImageElement.src = imagePath;
         } 
         else 
         {
-          timerElement.style.color = "white";
+          nextExerciseNameElement.textContent = "Entrainement terminé";
+          nextSetElement.textContent = "";
+          nextExerciseImageElement.src = "img/illustrations/haltères4.jpg";
         }
       }
 
@@ -347,6 +416,8 @@
         startButton.disabled = false;
         pauseButton.disabled = true;
         updateExerciseImage();
+        nextExerciseIndex = exerciseIndex + 1; 
+        previewNextExercise();
       }
 
 
@@ -357,16 +428,28 @@
       }
 
 
+      function playCountdownSound() 
+      {
+        var countdownSound = document.getElementById("countdownSound");
+        countdownSound.play();
+      }
+
+
+      //---------------------------------------------------------------------------\\
+      // Evènements
+
       startButton.addEventListener("click", startTimer);
       pauseButton.addEventListener("click", pauseTimer);
       resetButton.addEventListener("click", resetTimer);
       changeExerciseButton.addEventListener("click", changeExercise);
+      document.addEventListener("DOMContentLoaded", previewNextExercise);
 
 
       //---------------------------------------------------------------------------\\
       // L'Appel des fonctions
 
       resetTimer();
+
 
     </script>
 
