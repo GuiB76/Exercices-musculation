@@ -13,7 +13,6 @@
     <!-- JS -->
     <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
-    <script src="scripts/sound.js"></script>
   </head>
 
 
@@ -79,18 +78,19 @@
           <img id="next-exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
         </div>
 
-        <br>
-
-        <div class="encadre">
-          <button id="toggle-sound-settings"> Cacher/Afficher les paramètres du son </button>
-          <div id="sound-settings">
-            <label for="volume"> Volume du bip : </label>
-            <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
-            <audio id="bip-audio" src="sound/bipSonore.mp3"></audio>
-            <label for="mute"> Désactiver le bip : </label>
-            <input type="checkbox" id="mute">
-          </div>
+        <!-- Barre de gestion du volume -->
+        <div id="sound-settings" class="hide">
+          <label for="volume">Volume du bip :</label>
+          <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+          <audio id="bip-audio" src="path/to/bip-sound.mp3"></audio>
+          <label for="mute">Désactiver le bip :</label>
+          <input type="checkbox" id="mute">
         </div>
+
+        <br><br>
+
+        <!-- Bouton pour afficher/cacher les paramètres du son -->
+        <button id="toggle-sound-settings">Cacher/Afficher les paramètres du son</button>
 
       </section>
 
@@ -228,56 +228,72 @@
 
     </script>
 
+    <script>
+      // Fonction pour jouer le bip sonore après une interaction utilisateur
+      function playBipSound() 
+      {
+        const bipAudio = document.getElementById("bip-audio");
+        bipAudio.play();
+      }
+      // Événement pour démarrer le compte à rebours
+      startButton.addEventListener("click", function() 
+      {
+        startTimer();
+        // Lecture du bip sonore après interaction utilisateur
+        playBipSound();
+      });
+    </script>
+
 
     <script>
 
       //---------------------------------------------------------------------------\\
-      // LES TABLEAUX D'EXERCICES
+      // Les Tableaux d'Exercices
 
       var training20mins = 
       [
-        { name: "Biceps - Préparation",                      duration: 3,         image: "img/illustrations/haltères4.jpg" },
-        { name: "Biceps - Curls",                            duration: 5,         image: "img/curl-biceps-avec-halteres-alterne.gif" },
-        { name: "Biceps - Repos",                            duration: 5,         image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Biceps - Prise Marteau",                    duration: 5,         image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Biceps - Repos",                            duration: 5,         image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Biceps - Curls Supination",                 duration: 5,         image: "img/curl-zottman.gif" },
-        { name: "Pectoraux - Préparation",                   duration: 30,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Développé Couché",              duration: 45,        image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Pectoraux - Repos",                         duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Ecarté Couché",                 duration: 45,        image: "img/ecarte-couche-haltere.gif" },
-        { name: "Pectoraux - Repos",                         duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Développé Couché Resserré",     duration: 45,        image: "img/developpe-couche-serre-avec-halteres.gif" },
-        { name: "Jambes - Préparation",                      duration: 30,        image: "iimg/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Jambes - Squats Goblet",                    duration: 45,        image: "img/squat-goblet-exercice-musculation.gif" },
-        { name: "Jambes - Repos",                            duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Jambes - Squats Overhead",                  duration: 45,        image: "img/squat-overhead-halteres.gif" },
-        { name: "Jambes - Repos",                            duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Jambes - Squats Front",                     duration: 45,        image: "img/squat-front-avec-halteres.gif" },
-        { name: "Epaules - Préparation",                     duration: 30,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Epaules - Elevations Frontales",            duration: 45,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Epaules - Elevations Latérales",            duration: 45,        image: "img/elevations-frontales-exercice-musculation.gif" },
-        { name: "Epaules - Repos",                           duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Epaules - Développé Epaules",               duration: 45,        image: "img/developpe-epaules-halteres-debout.gif" },
-        { name: "Dos - Préparation",                         duration: 30,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Dos - Rowing Bras Droit",                   duration: 45,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Dos - Rowing Bras Gauche",                  duration: 45,        image: "img/rowing-haltere-un-bras.gif" },
-        { name: "Dos - Repos",                               duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Dos - Shrugs",                              duration: 45,        image: "img/shrugs-avec-halteres.gif" },
-        { name: "Abdominaux - Préparation",                  duration: 30,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Abdominaux - Planche",                      duration: 45,        image: "img/planche-abdos.gif" },
-        { name: "Abdominaux - Repos",                        duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Abdominaux - Planche Inversée",             duration: 45,        image: "img/planche-inversee.gif" },
-        { name: "Abdominaux - Repos",                        duration: 15,        image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Abdominaux - Mountain Climber",             duration: 45,        image: "img/mountain-climber-exercice-musculation.gif" },
-        { name: "Entrainement - Terminé",                    duration: 30,        image: "img/illustrations/haltères4.jpg" }
+        { name: "Biceps - Préparation",                      duration: 30,          image: "img/illustrations/haltères4.jpg" },
+        { name: "Biceps - Curls",                            duration: 45,          image: "img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Biceps - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Prise Marteau",                    duration: 45,          image: "img/curl-haltere-prise-neutre.gif" },
+        { name: "Biceps - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Curls Supination",                 duration: 45,          image: "img/curl-zottman.gif" },
+        { name: "Pectoraux - Préparation",                   duration: 30,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Développé Couché",              duration: 45,          image: "img/developpe-couche-halteres-exercice-musculation.gif" },
+        { name: "Pectoraux - Repos",                         duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Ecarté Couché",                 duration: 45,          image: "img/ecarte-couche-haltere.gif" },
+        { name: "Pectoraux - Repos",                         duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Développé Couché Resserré",     duration: 45,          image: "img/developpe-couche-serre-avec-halteres.gif" },
+        { name: "Jambes - Préparation",                      duration: 30,          image: "iimg/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Jambes - Squats Goblet",                    duration: 45,          image: "img/squat-goblet-exercice-musculation.gif" },
+        { name: "Jambes - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Jambes - Squats Overhead",                  duration: 45,          image: "img/squat-overhead-halteres.gif" },
+        { name: "Jambes - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Jambes - Squats Front",                     duration: 45,          image: "img/squat-front-avec-halteres.gif" },
+        { name: "Epaules - Préparation",                     duration: 30,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Epaules - Elevations Frontales",            duration: 45,          image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Epaules - Elevations Latérales",            duration: 45,          image: "img/elevations-frontales-exercice-musculation.gif" },
+        { name: "Epaules - Repos",                           duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Epaules - Développé Epaules",               duration: 45,          image: "img/developpe-epaules-halteres-debout.gif" },
+        { name: "Dos - Préparation",                         duration: 30,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Dos - Rowing Bras Droit",                   duration: 45,          image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Dos - Rowing Bras Gauche",                  duration: 45,          image: "img/rowing-haltere-un-bras.gif" },
+        { name: "Dos - Repos",                               duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Dos - Shrugs",                              duration: 45,          image: "img/shrugs-avec-halteres.gif" },
+        { name: "Abdominaux - Préparation",                  duration: 30,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Abdominaux - Planche",                      duration: 45,          image: "img/planche-abdos.gif" },
+        { name: "Abdominaux - Repos",                        duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Abdominaux - Planche Inversée",             duration: 45,          image: "img/planche-inversee.gif" },
+        { name: "Abdominaux - Repos",                        duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Abdominaux - Mountain Climber",             duration: 45,          image: "img/mountain-climber-exercice-musculation.gif" },
+        { name: "Entrainement - Terminé",                    duration: 30,          image: "img/illustrations/haltères4.jpg" }
       ];
 
 
       //---------------------------------------------------------------------------\\
-      // LES VARIABLES
+      // Les Variables
 
       var exerciseIndex = 0;
       var exerciseTime = training20mins;
@@ -454,7 +470,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // LES EVENEMENTS
+      // Evènements
 
       startButton.addEventListener("click", startTimer);
       pauseButton.addEventListener("click", pauseTimer);
@@ -464,7 +480,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // L'APPEL DES FONCTIONS
+      // L'Appel des fonctions
 
       resetTimer();
 
