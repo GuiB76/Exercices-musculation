@@ -37,15 +37,18 @@
     .ExercicesPresentationSection { display: inline-block; justify-content: center;}
     .ExercicePresentation { margin-left: 0px; margin-right: 0px;}
     .imgExercices { width: 200px; border-radius: 6%;}
-  
+    
 
   }
 
   @media (max-width: 500px)
   {
     .encadre { width: 300px;}
+    .buttons-exercise { margin: 10px; }
+    #exercise-name { font-size: 25px; margin-bottom: 0px; }
+    #current-set { font-size: 20px; margin-bottom: 0px; }
     #exercise-image { width: 250px; }
-    #next-exercise-image { width: 250px; }
+    #next-exercise-image { width: 150px; }
 
     /* Page principale */
     .encadre-main-page { width: 300px; }

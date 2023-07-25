@@ -12,7 +12,7 @@
   #exercise-name { font-size: 30px; font-weight: bold; margin-bottom: 10px; }
   #current-set { font-size: 25px; margin-bottom: 10px; }
   #timer { font-size: 50px; margin-bottom: -20px; font-weight: bold; }
-  #exercise-image { max-width: 400px; max-height: 400px; }
+  #exercise-image { max-width: 350px; max-height: 350px; }
   .rounded-image { border-radius: 6%; }
   .buttons-exercise { margin: 20px; color: #000000; }
   .buttons-exercise button
@@ -25,7 +25,7 @@
   #next-exercice-title > strong > p { margin: 0px;}
   #next-exercise-name { color: #c2c2c2; }
   #next-set { color: #c2c2c2; }
-  #next-exercise-image { max-width: 300px; max-height: 300px; opacity: 0.8;}
+  #next-exercise-image { max-width: 200px; max-height: 200px; opacity: 0.8;}
 
   .exercise-explanations
   { 
