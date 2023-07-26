@@ -52,9 +52,7 @@
 
       <h1 id="h1-exercise"> Entraînement de 20 minutes </h1>
 
-      <br>
-
-      <section class="EncadresExercices">
+      <section class="EncadresExercices" id="EncadreEntrainement20mins">
 
         <div class="encadre">
           <div id="exercise-name"> Biceps</div>
@@ -252,19 +250,19 @@
 
       var training20mins = 
       [
-        { name: "Biceps - Préparation",                      duration: 30,          image: "img/illustrations/haltères4.jpg" },
-        { name: "Biceps - Curls",                            duration: 45,          image: "img/curl-biceps-avec-halteres-alterne.gif" },
-        { name: "Biceps - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Biceps - Prise Marteau",                    duration: 45,          image: "img/curl-haltere-prise-neutre.gif" },
-        { name: "Biceps - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Biceps - Curls Supination",                 duration: 45,          image: "img/curl-zottman.gif" },
-        { name: "Pectoraux - Préparation",                   duration: 30,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Développé Couché",              duration: 45,          image: "img/developpe-couche-halteres-exercice-musculation.gif" },
-        { name: "Pectoraux - Repos",                         duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Ecarté Couché",                 duration: 45,          image: "img/ecarte-couche-haltere.gif" },
-        { name: "Pectoraux - Repos",                         duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
-        { name: "Pectoraux - Développé Couché Resserré",     duration: 45,          image: "img/developpe-couche-serre-avec-halteres.gif" },
-        { name: "Jambes - Préparation",                      duration: 30,          image: "iimg/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Préparation",                      duration: 3,          image: "img/illustrations/haltères4.jpg" },
+        { name: "Biceps - Curls",                            duration: 5,          image: "img/curl-biceps-avec-halteres-alterne.gif" },
+        { name: "Biceps - Repos",                            duration: 5,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Prise Marteau",                    duration: 5,          image: "img/curl-haltere-prise-neutre.gif" },
+        { name: "Biceps - Repos",                            duration: 5,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Biceps - Curls Supination",                 duration: 5,          image: "img/curl-zottman.gif" },
+        { name: "Pectoraux - Préparation",                   duration: 3,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Développé Couché",              duration: 5,          image: "img/developpe-couche-halteres-exercice-musculation.gif" },
+        { name: "Pectoraux - Repos",                         duration: 5,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Ecarté Couché",                 duration: 5,          image: "img/ecarte-couche-haltere.gif" },
+        { name: "Pectoraux - Repos",                         duration: 5,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
+        { name: "Pectoraux - Développé Couché Resserré",     duration: 5,          image: "img/developpe-couche-serre-avec-halteres.gif" },
+        { name: "Jambes - Préparation",                      duration: 3,          image: "iimg/illustrations/boire-de-l-eau-2.jpg" },
         { name: "Jambes - Squats Goblet",                    duration: 45,          image: "img/squat-goblet-exercice-musculation.gif" },
         { name: "Jambes - Repos",                            duration: 15,          image: "img/illustrations/boire-de-l-eau-2.jpg" },
         { name: "Jambes - Squats Overhead",                  duration: 45,          image: "img/squat-overhead-halteres.gif" },
@@ -473,10 +471,26 @@
       // Evènements
 
       startButton.addEventListener("click", startTimer);
+      startButton.addEventListener("click", hideH1Exercise);
       pauseButton.addEventListener("click", pauseTimer);
       resetButton.addEventListener("click", resetTimer);
+      resetButton.addEventListener("click", showH1Exercise);
       changeExerciseButton.addEventListener("click", changeExercise);
       document.addEventListener("DOMContentLoaded", previewNextExercise);
+
+      //---------------------------------------------------------------------------\\
+      // Evènements
+
+      // Récupérer la référence de l'élément h1-exercise
+      const h1ExerciseElement = document.getElementById("h1");
+      // Fonction pour cacher le titre h1-exercise
+      function hideH1Exercise() { h1ExerciseElement.style.display = "none"; }
+      // Fonction pour afficher le titre h1-exercise
+      function showH1Exercise() { h1ExerciseElement.style.display = "block"; }
+      // Événement pour cacher le titre lorsque l'entrainement est lancé (au clic sur le bouton "Démarrer")
+      document.getElementById("start").addEventListener("click", () => { hideH1Exercise(); });
+      // Événement pour afficher le titre lorsque l'entrainement est réinitialisé (au clic sur le bouton "Réinitialiser")
+      document.getElementById("reset").addEventListener("click", () => { showH1Exercise();});
 
 
       //---------------------------------------------------------------------------\\
