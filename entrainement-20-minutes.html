@@ -214,6 +214,22 @@
 
     </script>
 
+    <script>
+      //---------------------------------------------------------------------------\\
+      // CACHER LE H1 AU LANCEMENT DE L'ENTRAINEMENT
+
+      // Récupérer la référence de l'élément h1-exercise
+      const h1ExerciseElement = document.getElementById("h1-exercise");
+      // Fonction pour cacher le titre h1-exercise
+      function hideH1Exercise() { h1ExerciseElement.style.display = "none"; }
+      // Fonction pour afficher le titre h1-exercise
+      function showH1Exercise() { h1ExerciseElement.style.display = "block"; }
+      // Événement pour cacher le titre lorsque l'entrainement est lancé (au clic sur le bouton "Démarrer")
+      document.getElementById("start").addEventListener("click", () => { hideH1Exercise(); });
+      // Événement pour afficher le titre lorsque l'entrainement est réinitialisé (au clic sur le bouton "Réinitialiser")
+      document.getElementById("reset").addEventListener("click", () => { showH1Exercise();});
+    </script>
+
 
     <script>
 

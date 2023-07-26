@@ -13,6 +13,11 @@
     <!-- JS -->
     <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
+    <!-- 
+    <script src="scripts/sound.js"></script>
+    <script src="scripts/wakeLock.js"></script>
+    <script src="scripts/training20mins.js"></script>
+    -->
   </head>
 
 
@@ -50,7 +55,7 @@
     
     <main>  
 
-      <h1 id="h1-exercise"> Entraînement de 20 minutes </h1>
+      <h1 id="h1-exercise"> Entraînement de 20 minutes copy</h1>
 
       <section class="EncadresExercices" id="EncadreEntrainement20mins">
 
@@ -76,6 +81,8 @@
           <img id="next-exercise-image" class="rounded-image" src="img/illustrations/haltères4.jpg" alt="Illustration de l'exercice">
         </div>
 
+        <br>
+
         <!-- Barre de gestion du volume -->
         <div id="sound-settings" class="hide">
           <label for="volume">Volume du bip :</label>
@@ -84,11 +91,10 @@
           <label for="mute">Désactiver le bip :</label>
           <input type="checkbox" id="mute">
         </div>
-
-        <br><br>
-
         <!-- Bouton pour afficher/cacher les paramètres du son -->
         <button id="toggle-sound-settings">Cacher/Afficher les paramètres du son</button>
+
+        <br><br>
 
       </section>
 
@@ -201,10 +207,8 @@
     <!-- -------------------------------JavaScript-------------------------------- -->
 
     <script>
-
       //---------------------------------------------------------------------------\\
-      // Menu Déroulant Explications Exercices
-
+      // MENU DEROULANT EXPLICATIONS EXERCICES
       const dropdownBtns = document.querySelectorAll(".dropdown-btn");
         dropdownBtns.forEach(function(btn) 
         {
@@ -223,10 +227,11 @@
             });
           });
         });
-
     </script>
 
     <script>
+      //---------------------------------------------------------------------------\\
+      // SON COMPTE A REBOURS
       // Fonction pour jouer le bip sonore après une interaction utilisateur
       function playBipSound() 
       {
@@ -236,17 +241,32 @@
       // Événement pour démarrer le compte à rebours
       startButton.addEventListener("click", function() 
       {
-        startTimer();
         // Lecture du bip sonore après interaction utilisateur
         playBipSound();
       });
+    </script>
+
+    <script>
+      //---------------------------------------------------------------------------\\
+      // CACHER LE H1 AU LANCEMENT DE L'ENTRAINEMENT
+
+      // Récupérer la référence de l'élément h1-exercise
+      const h1ExerciseElement = document.getElementById("h1-exercise");
+      // Fonction pour cacher le titre h1-exercise
+      function hideH1Exercise() { h1ExerciseElement.style.display = "none"; }
+      // Fonction pour afficher le titre h1-exercise
+      function showH1Exercise() { h1ExerciseElement.style.display = "block"; }
+      // Événement pour cacher le titre lorsque l'entrainement est lancé (au clic sur le bouton "Démarrer")
+      document.getElementById("start").addEventListener("click", () => { hideH1Exercise(); });
+      // Événement pour afficher le titre lorsque l'entrainement est réinitialisé (au clic sur le bouton "Réinitialiser")
+      document.getElementById("reset").addEventListener("click", () => { showH1Exercise();});
     </script>
 
 
     <script>
 
       //---------------------------------------------------------------------------\\
-      // Les Tableaux d'Exercices
+      // TABLEAUX EXERCICES
 
       var training20mins = 
       [
@@ -291,7 +311,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // Les Variables
+      // LES VARIABLES
 
       var exerciseIndex = 0;
       var exerciseTime = training20mins;
@@ -312,11 +332,11 @@
       var nextSetElement = document.getElementById("next-set");
       var nextExerciseImageElement = document.getElementById("next-exercise-image");
 
-      var wakeLock = null;
-
 
       //---------------------------------------------------------------------------\\
       // WAKE LOCK pour garder le téléphone allumé lors des exercices de l'entrainement
+
+      var wakeLock = null;
 
       // Fonction pour demander le Wake Lock
       async function requestWakeLock() 
@@ -468,7 +488,7 @@
 
 
       //---------------------------------------------------------------------------\\
-      // Evènements
+      // LES EVENEMENTSs
 
       startButton.addEventListener("click", startTimer);
       startButton.addEventListener("click", hideH1Exercise);
@@ -478,21 +498,7 @@
       changeExerciseButton.addEventListener("click", changeExercise);
       document.addEventListener("DOMContentLoaded", previewNextExercise);
 
-      //---------------------------------------------------------------------------\\
-      // Evènements
-
-      // Récupérer la référence de l'élément h1-exercise
-      const h1ExerciseElement = document.getElementById("h1");
-      // Fonction pour cacher le titre h1-exercise
-      function hideH1Exercise() { h1ExerciseElement.style.display = "none"; }
-      // Fonction pour afficher le titre h1-exercise
-      function showH1Exercise() { h1ExerciseElement.style.display = "block"; }
-      // Événement pour cacher le titre lorsque l'entrainement est lancé (au clic sur le bouton "Démarrer")
-      document.getElementById("start").addEventListener("click", () => { hideH1Exercise(); });
-      // Événement pour afficher le titre lorsque l'entrainement est réinitialisé (au clic sur le bouton "Réinitialiser")
-      document.getElementById("reset").addEventListener("click", () => { showH1Exercise();});
-
-
+      
       //---------------------------------------------------------------------------\\
       // L'Appel des fonctions
 

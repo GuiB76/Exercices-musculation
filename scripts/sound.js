@@ -1,4 +1,21 @@
 //---------------------------------------------------------------------------\\
+// SON COMPTE A REBOURS
+
+// Fonction pour jouer le bip sonore après une interaction utilisateur
+function playBipSound() 
+{
+const bipAudio = document.getElementById("bip-audio");
+bipAudio.play();
+}
+// Événement pour démarrer le compte à rebours
+startButton.addEventListener("click", function() 
+{
+// Lecture du bip sonore après interaction utilisateur
+playBipSound();
+});
+
+
+//---------------------------------------------------------------------------\\
 // GESTION DU VOLUME DU SON DU BIP
 
 // Récupérer les éléments du DOM
