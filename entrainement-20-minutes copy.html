@@ -232,6 +232,7 @@
     <script>
       //---------------------------------------------------------------------------\\
       // SON COMPTE A REBOURS
+
       // Fonction pour jouer le bip sonore après une interaction utilisateur
       function playBipSound() 
       {
@@ -248,7 +249,7 @@
 
     <script>
       //---------------------------------------------------------------------------\\
-      // CACHER LE H1 AU LANCEMENT DE L'ENTRAINEMENT
+      // CACHER LE H1 AU LANCEMENT DE L'ENTRAINEMENT ET REMONTER LA PAGE
 
       // Récupérer la référence de l'élément h1-exercise
       const h1ExerciseElement = document.getElementById("h1-exercise");
@@ -260,6 +261,8 @@
       document.getElementById("start").addEventListener("click", () => { hideH1Exercise(); });
       // Événement pour afficher le titre lorsque l'entrainement est réinitialisé (au clic sur le bouton "Réinitialiser")
       document.getElementById("reset").addEventListener("click", () => { showH1Exercise();});
+      // Fonction pour faire remonter la page tout en haut
+      function scrollToTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
     </script>
 
 
@@ -446,6 +449,7 @@
         intervalId = setInterval(updateTimer, 1000);
         startButton.disabled = true;
         pauseButton.disabled = false;
+        scrollToTop();
       }
 
 

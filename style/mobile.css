@@ -46,8 +46,8 @@
 
     .sticky-header { height: 0px; }
 
-    #menuToggleMobile ~ * { scale: 0.2; margin-left: 100px;}
-    #nav-encadre { scale: 0.2;}
+    #menuToggleMobile ~ * { scale: 0.9; }
+    #nav-encadre { scale: 0.9;}
     /*
     #menuToggleMobile input { scale: 0.8;}
     #menuToggleMobile span { scale: 0.8;}
