@@ -71,3 +71,12 @@
     /* Slide it in from the left */
     #menuToggleMobile input:checked ~ ul { transform: none; }
 
+
+    @media (max-width: 500px)
+    {
+        .sticky-header { height: 0px; }
+        #nav-encadre { top: 11px; left: 11px; width: 50px; height: 50px; }
+        #menuToggleMobile input { width: 50px; height: 45px; top: -17px; left: -40px; }
+        #menuToggleMobile span { width: 45px; height: 8px; top: -10px; left: -34px; }
+        #menuMobile { width: 290px;}
+    }

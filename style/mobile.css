@@ -43,19 +43,6 @@
 
   @media (max-width: 500px)
   {
-
-    .sticky-header { height: 0px; }
-
-    #menuToggleMobile ~ * { scale: 0.9; }
-    #nav-encadre { scale: 0.9;}
-    /*
-    #menuToggleMobile input { scale: 0.8;}
-    #menuToggleMobile span { scale: 0.8;}
-    #menuToggleMobile span:first-child { scale: 0.8;}
-    #menuToggleMobile span:nth-last-child(2) { scale: 0.8;}
-    #nav-encadre { scale: 0.8;}
-    */
-
     #h1-exercise { scale: 0.8;}
 
     .encadre { width: 300px;}
@@ -67,7 +54,7 @@
 
     /* Page d'Entrainements et Exercices Spécifique */
     .exercise-explanations { width: 300px; }
-    #EncadreEntrainement20mins { scale: 0.9;}
+    #EncadreEntrainement20mins { scale: 0.9; margin-top: -20px;}
     .buttons-exercise { margin: 10px; }
     #exercise-name { font-size: 25px; margin-bottom: 0px; }
     #current-set { font-size: 20px; margin-bottom: 0px; }
